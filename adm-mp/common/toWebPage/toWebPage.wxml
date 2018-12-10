@@ -1,0 +1,10 @@
+<!--common/toWebPage/toWebPage.wxml-->
+<view class='toWebPageContent'>
+  <view class='loading'>
+    <image src='../../images/loading.gif' mode='widthFix'></image>
+    <view>跳转中</view>
+  </view>
+  <view class='desc'>3秒后将跳转至国美商城</view>
+  <button bindtap='toWebPage' class='jump'>立即访问</button>
+  <button bindtap='back' class='back'>返回</button>
+</view>

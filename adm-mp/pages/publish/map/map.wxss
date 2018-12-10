@@ -1,0 +1,125 @@
+/* pages/publish/map/map.wxss */
+page {
+  overflow: hidden;
+}
+.search-bar {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100rpx;
+  padding: 20rpx 30rpx;
+  background: #fff;
+}
+.search-bar .search-con {
+  display: flex;
+  width: 100%;
+  height: 60rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #E4E4E4;
+  background: #F6F6F6;
+  border-radius: 60rpx;
+  align-items: center;
+}
+.search-con .search-input {
+  flex-grow: 1;
+  height: 58rpx;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+}
+.map_container{
+  position: absolute;
+  top: 100rpx;
+  bottom: 520rpx;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+.map{
+  width: 100%;
+  height: 100%;
+}
+.map_text{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  height: 520rpx;
+  box-sizing: border-box;
+  background: #fff;
+  z-index: 100;
+}
+.map_text .scroll-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 380rpx;
+  box-sizing: border-box;
+  padding: 30rpx;
+}
+.pos-list .pos-item {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100rpx;
+  padding: 11rpx 0;
+  align-items: center;
+  border-bottom: 1rpx solid #eee;
+}
+.pos-item .pos-msg {
+  flex-grow: 1;
+}
+.pos-item .pos-name {
+  display: block;
+  font-size: 30rpx;
+  color: #333;
+  line-height: 42rpx;
+  margin: 0;
+}
+.pos-item .pos-address {
+  display: block;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 36rpx;
+  margin: 0;
+}
+.map_text .done-btn {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 140rpx;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+}
+.done-btn .btn {
+  width: 100%;
+  height: 90rpx;
+  background: #E82C2C;
+  border-radius: 90rpx;
+  color: #fff;
+  line-height: 90rpx;
+  font-size: 32rpx;
+}
+.cover-view {
+  position: absolute;
+  width: 100%;
+  top: 100rpx;
+  left: 0;
+  bottom: 0;
+  z-index: 150;
+}
+.search-box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 200;
+}
+.search-box .scroll-view {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 30rpx;
+}

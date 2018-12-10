@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "发现",
+  "usingComponents": {
+    "component-tools": "../../../components/detailTools/detailTools",
+    "component-cover": "../../../components/shareCover/shareCover",
+    "component-loadingFail": "../../../components/loadingFail/loadingFail"
+  }
+}

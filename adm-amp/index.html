@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>AMP-广告投放系统</title>
+
+	<script type="text/javascript" src="https://js.meixincdn.com/m/AMP/dist/swfobject.js"></script>
+	<script type="text/javascript" src="https://js.meixincdn.com/gvs-player/dist/vod/js/meixinplayer-min.js"></script>
+	<script type="text/javascript" src="https://js.meixincdn.com/m/AMP/dist/promise-polyfill.js"></script>
+
+	<script type="text/javascript">
+	var userInfoIndex;
+	var $CONFIG = {
+		domain: "http://10.112.178.90:9090/mock/585784303532b3726e0afdd2/",
+		registUrl: "http://reg.atguat.com.cn/register/index/person",
+		passwordUrl: "http://myhome.atguat.com.cn/member/passwordReset",
+		// 修改回调地址为本地地址
+		npopUrl: "http://pop.atguat.com.cn/login2.jsp?callUrl=http%3A%2F%2Famp.local.gomeplus.com%2Fcallback",
+	};
+	</script>
+</head>
+<script>
+	window.onload=function(){}
+</script>
+<body>
+	<div id="app"></div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<view class="map_box">
+  <map class="map" id="navi_map" scale="12" markers="{{markers}}" polyline="{{polyline}}">
+    <cover-view class="action_box" wx:if="{{isAuthorize && isShowActionBox}}">
+      <cover-view class="action_item action_walk" data-action="1" bindtap="changeAction">
+        <cover-image wx:if="{{actionType != 1}}" src="/images/walking.png"></cover-image>
+        <cover-image wx:if="{{actionType == 1}}" src="/images/walking_actived.png"></cover-image>
+      </cover-view>
+      <cover-view class="action_item action_drive" data-action="2" bindtap="changeAction">
+        <cover-image wx:if="{{actionType != 2}}" src="/images/driving.png"></cover-image>
+        <cover-image wx:if="{{actionType == 2}}" src="/images/driving_actived.png"></cover-image>
+      </cover-view>
+      <cover-view class="action_item action_bus" data-action="3" bindtap="changeAction">
+        <cover-image wx:if="{{actionType != 3}}" src="/images/transit.png"></cover-image>
+        <cover-image wx:if="{{actionType == 3}}" src="/images/transit_actived.png"></cover-image>
+      </cover-view>
+    </cover-view>
+  </map>
+</view>

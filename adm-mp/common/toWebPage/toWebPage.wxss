@@ -1,0 +1,37 @@
+/* common/toWebPage/toWebPage.wxss */
+.toWebPageContent{
+  padding: 0 30rpx;
+}
+.toWebPageContent .jump{
+  background: #ff1640;
+  color: #fff;
+  margin-bottom: 30rpx;
+}
+.toWebPageContent .back{
+  color: #ff1640;
+}
+.toWebPageContent .desc{
+  color: #999;
+  text-align: center;
+  font-size: 28rpx;
+  margin: 60rpx 0;
+}
+.toWebPageContent .loading{
+  width: 250rpx;
+  height: 250rpx;
+  background: #4c4c4c;
+  margin: 0 auto;
+  border-radius: 5px;
+  text-align: center;
+  vertical-align: middle;
+  margin-top:150rpx;
+}
+.toWebPageContent .loading image{
+  width: 55rpx;
+  margin-top:80rpx;
+}
+.toWebPageContent .loading view{
+  color: #fff;
+  font-size: 26rpx;
+  margin:20rpx 0;
+}

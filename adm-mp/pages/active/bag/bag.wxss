@@ -1,0 +1,187 @@
+/* pages/active/bag/bag.wxss */
+page {
+  background: url('https://mevent.meixincdn.com/static/img/bag/bag_page_bg.png') no-repeat #fff3db;
+  background-size: 100% auto;
+  background-position: top;
+}
+.page-logo {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: right;
+  padding: 35rpx 40rpx 0;
+}
+.page-logo image {
+  width: 306rpx;
+  height: 51rpx;
+}
+.parent-info {
+  width: 100%;
+  height: 118rpx;
+}
+.parent-info .p-avatar {
+  width: 116rpx;
+  height: 116rpx;
+  margin-left: 66rpx;
+  margin-right: 25rpx;
+  border: solid 1rpx #ddd;
+  border-radius: 116rpx;
+}
+.parent-info .p-text {
+  color: #e50012;
+  font-size: 32rpx;
+}
+
+.bag-con {
+  position: relative;
+  width: 100%;
+  height: 787rpx;
+  margin-top: 50rpx;
+  background: url('https://mevent.meixincdn.com/static/img/bag/bag_bag.png') no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+.bag-con .bag-get-btn {
+  position: absolute;
+  width: 191rpx;
+  height: 106rpx;
+  left: 50%;
+  bottom: 130rpx;
+  margin-left: -90rpx;
+}
+.bag-con .bag-get-btn image {
+  width: 191rpx;
+  height: 106rpx;
+}
+.btn-con .btn {
+  position: relative;
+  width: 525rpx;
+  height: 93rpx;
+  margin: 0 auto;
+  margin-bottom: 26rpx;
+}
+.action-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+.btn-con .btn image {
+  width: 525rpx;
+  height: 93rpx;
+}
+.list-con {
+  width: 690rpx;
+  padding: 35rpx;
+  margin: 20rpx auto;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 20rpx;
+  text-align: center;
+}
+.bg-con .title {
+  position: relative;
+  display: inline-block;
+  width: 245rpx;
+  font-size: 32rpx;
+  text-align: center;
+  color: #afafaf;
+  line-height: 60rpx;
+}
+.bg-con .title .title-msg {
+  display: inline-block;
+  width: 132rpx;
+  padding: 0 20rpx;
+  color: #333333;
+}
+.bg-con .desc-msg {
+  font-size: 28rpx;
+  color: #333;
+  text-align: center;
+  line-height: 48rpx;
+}
+.list-con .desc-msg .desc-num {
+  color: #f91300;
+}
+.item-list {
+  margin-top: 30rpx;
+}
+.item-list .item {
+  height: 78rpx;
+  margin: 12rpx 0;
+  text-align: left;
+}
+.item-list .item image {
+  width: 78rpx;
+  height: 78rpx;
+  margin-right: 35rpx;
+  box-sizing: border-box;
+  border: solid 1rpx #ddd;
+  border-radius: 78rpx;
+}
+.item .user-info {
+  display: inline-block;
+  line-height: 78rpx;
+  font-size: 26rpx;
+}
+.item .user-info .user-name {
+  display: inline-block;
+  max-width: 130rpx;
+  height: 78rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #333;
+  vertical-align: top;
+}
+.item .user-info .text {
+  display: inline-block;
+  color: #666;
+  vertical-align: top;
+}
+.item .user-info .bag-name {
+  display: inline-block;
+  color: #0093e8;
+  vertical-align: top;
+}
+.active-rule {
+  width: 690rpx;
+  padding: 35rpx;
+  margin: 20rpx auto;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 20rpx;
+  text-align: center;
+}
+.active-rule .rule-list {
+  text-align: left;
+  font-size: 24rpx;
+  color: #666666;
+  line-height: 44rpx;
+}
+.more {
+  margin-top: 30rpx;
+  color: #999999;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+.more image {
+  width: 26rpx;
+  height: 16rpx;
+}
+.empty-con {
+  width: 100%;
+  height: 50rpx;
+}
+.goHome{
+  position: fixed;
+  bottom: 180rpx;
+  right: 20rpx;
+  height: 80rpx;
+  width: 80rpx;
+}
+.goHome image{
+  width: 100%;
+}

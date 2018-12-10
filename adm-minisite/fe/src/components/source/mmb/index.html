@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html data-use-rem="750">
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<meta name="google" value="notranslate">
+		<meta name="author" content="国美分享（北京）网络技术有限公司" />
+		<meta name="description" content="" />
+		<meta name="HandheldFriendly" content="true">
+		<meta name="MobileOptimized" content="320">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="browsermode" content="application">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="x5-page-mode" content="app">
+		<meta name="apple-itunes-app" content="app-id=123131232132" />
+		<meta name="apple-mobile-web-app-title" content="国美">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		var $CONFIG = {
+        domain: 'http://discovery.pre.ds.gome.com.cn/',
+        mdomain: 'http://m-discovery.pre.ds.gome.com.cn/',
+        mmBoardDomain: 'http://m-awall.stage.ds.gome.com.cn',
+        adrequestUrl: 'http://ad-flitght.pre.ds.gome.com.cn/flight',
+        rebateBudgetUrl: 'http://ad-shareserver.pre.ds.gome.com.cn/rebateBudget',
+        pariseUrl: 'http://ad-shareserver.pre.ds.gome.com.cn/parise',
+        shareCountUrl: 'http://ad-shareserver.pre.ds.gome.com.cn/discoveryShare',
+        batchPraiseShareUrl: 'http://ad-shareserver.pre.ds.gome.com.cn/pariseShareBatch',
+        shareRebateUrl: 'http://ad-shareserver.pre.ds.gome.com.cn/shareRebate',
+        videoShareUrl: 'http://ad-shareserver.pre.ds.gome.com.cn/video',
+        questionRebateUrl: 'http://ad-shareserver.pre.ds.gome.com.cn/questionRebate',
+        questionViewUrl: 'http://ad-shareserver.pre.ds.gome.com.cn/questionView',
+        middlePageImpressionUrl: 'http://ad-shareserver.pre.ds.gome.com.cn/middlePageImpression',
+        questionInvestAppearUrl: 'http://ad-shareserver.pre.ds.gome.com.cn/questionInvestAppear',
+        setVideoCountUrl: 'http://count-v.pre.video.api/set/video/',
+        getVideoCountUrl: 'http://count-v.pre.video.api/get/video/',
+
+        topicSlotId: 10250,
+        wapTopicSlotId: 10836,
+        shopSlotId: 10251,
+        wapShopSlotId: 10837,
+        itemSlotId: 10252,
+        wapItemSlotId: 10838,
+        videoSlotId: 10253,
+        wapVideoSlotId: 10840,
+        productSlotId: 10326,
+        wapProductSlotId: 10839,
+        adRequestApi: 'http://ad-flitght.pre.ds.gome.com.cn/flight',
+        pariseShareBatch: 'http://ad-shareserver.pre.ds.gome.com.cn/pariseShareBatch',
+        parise: 'http://ad-shareserver.pre.ds.gome.com.cn/parise',
+        discoveryShare: 'http://ad-shareserver.pre.ds.gome.com.cn/discoveryShare',
+        shareRebate: 'http://ad-shareserver.pre.ds.gome.com.cn/shareRebate',
+        videoGetCount: 'http://count-v.pre.video.api/set/video/',
+        videoGetCount: 'http://count-v.pre.video.api/get/video/',
+        missionDoMain: 'http://10.125.192.169:8089/',
+        missionUrl: 'http://discovery.pre.ds.gome.com.cn/mission'
+    };
+	</script>
+	<body>
+	<div id="app"></div>
+	<!-- built files will be auto injected -->
+	</body>
+	<script>
+		(function(win) {
+			var doc = win.document,
+			html = doc.documentElement,
+			option = html.getAttribute("data-use-rem");
+			if (option === null) {
+				return
+			}
+			var baseWidth = parseInt(option).toString() === "NaN" ? 640 : parseInt(option);
+			var grids = baseWidth / 100;
+			var clientWidth = html.clientWidth || 320;
+			var fontsize = html.style.fontSize = clientWidth / grids + "px";
+			fontsize = parseFloat(fontsize);
+			var maxFontsize = Math.ceil(fontsize);
+			var minFontsize = Math.floor(fontsize);
+			var testDom = document.createElement("div");
+			var testDomWidth = 0;
+			var adjustRatio = 0;
+			testDom.style.cssText = "height:0;width:1rem;";
+			doc.body.appendChild(testDom);
+			var calcTestDom = function() {
+				testDomWidth = testDom.offsetWidth;
+				if (/iPhone|Android|MicroMessenger|gomeplus|QQ/g.test(navigator.userAgent)) {
+					if (testDomWidth < minFontsize || testDomWidth > maxFontsize) {
+						adjustRatio = clientWidth / grids / testDomWidth;
+						var reCalcRem = clientWidth * adjustRatio / grids;
+						html.style.fontSize = reCalcRem + "px";
+					} else {
+						doc.body.removeChild(testDom);
+					}
+					document.body.removeAttribute('style');
+				} else {
+					html.style.fontSize = "50px";
+					document.body.style.width = "375px";
+					document.body.style.margin = '0 auto';
+					doc.body.removeChild(testDom);
+				}
+			};
+			setTimeout(calcTestDom, 20);
+			var reCalc = function() {
+				var newCW = html.clientWidth;
+				if (newCW === clientWidth) {
+					return
+				}
+				clientWidth = newCW;
+				if (/iPhone|Android|MicroMessenger|gomeplus|QQ/g.test(navigator.userAgent)) {
+					html.style.fontSize = newCW * (adjustRatio ? adjustRatio: 1) / grids + "px";
+					document.body.removeAttribute('style');
+				} else {
+					html.style.fontSize = "50px";
+					document.body.style.width = "375px";
+					document.body.style.margin = '0 auto';
+				}
+			};
+			if (!doc.addEventListener) {
+				return
+			}
+			var resizeEvt = "orientationchange" in win ? "orientationchange": "resize";
+			win.addEventListener(resizeEvt, reCalc, false);
+			doc.addEventListener("DOMContentLoaded", reCalc, false)
+		})(window);
+	</script>
+</html>

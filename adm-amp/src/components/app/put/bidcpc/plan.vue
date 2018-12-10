@@ -1,0 +1,34 @@
+<template>
+	<div>
+		<m-breadcrumb :config="breadcrumbConfig"></m-breadcrumb>
+		<m-list></m-list>
+	</div>
+</template>
+<script>
+import actions from 'actions';
+
+import Event from 'event';
+
+import Breadcrumb from '../../../common/breadcrumb.vue';
+import PlanList from "./plan-list.vue";
+export default {
+	name: 'app-put-bidcpc-plan-overview',
+	data() {
+		return {
+			breadcrumbConfig: {
+				msg: '投放计划',
+				showBack: false
+			}
+		};
+	},
+	components: {
+		'm-breadcrumb': Breadcrumb,
+		'm-list': PlanList
+	},
+	methods: {
+		showNew(obj) {
+			actions.controlDrawer(this.$store, obj);
+		}
+	}
+};
+</script>

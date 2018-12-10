@@ -1,0 +1,115 @@
+@import "../../../components/rebate/rebate.wxss";
+.itemDetail {
+  background: #f2f2f2;
+}
+.itemDetail .header_box {
+  font-size: 0;
+  background: #fff;
+}
+.itemDetail .header_box image {
+  width:100%;
+}
+itemDetail .detailContent {
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+}
+.itemDetail .detailContent .content_header {
+  padding: 30rpx 16rpx 38rpx;
+  background: #fff;
+  border-bottom: .5px solid #ddd;
+}
+.itemDetail .detailContent .content_header .detail-title {
+  font-size: 48rpx;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+.itemDetail .detailContent .content_header .p_box {
+  display: block;
+  font-size: 32rpx;
+  color: #000;
+  line-height: 52rpx;
+  margin: 30rpx 0 0 0;
+  border-top: 1px solid #f1f1f1;
+  padding: 40rpx 0 0 0;
+}
+.itemDetail .detailContent .content_main {
+  margin-top: 18rpx;
+  background: #fff;
+  padding: 0 22rpx;
+  overflow: hidden;
+  border-top: .5px solid #ddd;
+}
+.itemDetail .detailContent .content_main .item-content{
+  width: 50%;
+  float: left;
+  padding-top: 22rpx;
+  padding-bottom: 50rpx;
+  border-top: 1px solid #f0f0f0;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-right: 1px solid #f0f0f0;
+}
+.itemDetail .detailContent .content_main .item-content:nth-child(1) {
+  border-top: 0 none;
+}
+.itemDetail .detailContent .content_main .item-content:nth-child(2) {
+  border-top: 0 none;
+}
+.itemDetail .detailContent .content_main .item-content:nth-child(even) {
+  float:right;
+  text-align: right;
+  border-right: 0 none;
+}
+.itemDetail .detailContent .content_main .item-content:nth-child(even) .content-title {
+  text-align: left; 
+  padding-left: 15rpx;
+}
+.itemDetail .detailContent .content_main .item-content:nth-child(even) .content-price {
+  text-align: left; 
+  padding-left: 15rpx;
+}
+.itemDetail .detailContent .content_main .item-content image {
+  width: 336rpx;
+  height: 336rpx;
+  margin-bottom: 10rpx;
+}
+.itemDetail .detailContent .content_main .item-content .content-title{
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 6rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.itemDetail .detailContent .content_main .item-content .content-price {
+  font-size: 26rpx;
+  color: #ea5c5e;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.detail_footer text{
+  display: block;
+  font-size: 26rpx;
+  color: #999;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  padding-bottom: 140rpx;
+}
+
+.goHome{
+  position:fixed;
+  bottom:180rpx;
+  right:20rpx;
+  height: 80rpx;
+  width: 80rpx;
+}
+.goHome image{
+  width: 100%;
+}

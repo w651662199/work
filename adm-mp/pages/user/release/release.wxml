@@ -1,0 +1,31 @@
+<!--pages/user/release/release.wxml-->
+<view class='release'>
+  <view class="list">
+    <view class='contentItems' wx:for="{{list}}" wx:key="index">
+      <view class='contentFl' bindtap='toReleaseDetails' style="{{item.txtStyle}}"  bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE"  data-index="{{index}}" data-id="{{item.contentId}}">
+        <view class='contentTop' style="{{item.title==''?'justify-content:left;':''}}">
+          <image lazy-load='true' mode='aspectFill' wx:if="{{item.image!=''}}" src="{{item.image}}"></image>
+          <view class="{{item.image!=''?'content':'content noImgContent'}}">
+            <text class='title' wx:if="{{item.title!=''}}">{{item.title}}</text>
+            <text class='tag' style="{{item.title==''?'position:absolute;top:16rpx;left:274rpx;':''}}">{{item.tag}}</text>
+          </view>
+        </view>
+        <view class='contentBot'>
+          <text class='status unaudited' wx:if="{{item.approveStatus==0}}">审核中</text>
+          <text class='status passAudited' wx:if="{{item.approveStatus==1}}">审核通过</text>
+          <text class='status notAudited' wx:if="{{item.approveStatus==-1}}">审核未通过</text>
+          <text class='time'>{{item.publishTime}}</text>
+        </view>
+      </view>
+      <view class='del' data-id="{{item.contentId}}" bindtap="delete">删除        </view>
+    </view>
+  </view>
+  <view class='gotTop' hidden='{{showGoTop}}' bindtap='goTop'>
+    <image src='../../../images/go-top.png'></image>
+  </view>
+  <loading hidden="{{loading}}">
+    加载中...
+  </loading>
+  <view class='noMoreContent' wx:if='{{noMoreData}}'>没有更多内容了</view>
+  <component-loadingFail wx:if='{{showLoadingFail}}' bind:reload='_reload' ></component-loadingFail>
+</view>

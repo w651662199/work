@@ -1,0 +1,149 @@
+div, p, ul, li, html, body {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+div {
+	box-sizing: border-box;
+}
+html {
+	font-family: "PingFangSC-Regular", "Microsoft YaHei",Arial,"Helvetica", sans-serif;
+	font-size: 10px;
+	height: 100%;
+	background: #fff;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+	height: 100%;
+	background: #f2f2f2;
+}
+.mmb-con {
+	width: 100%;
+	.tab-bar {
+		width: 100%;
+		height: .82rem;
+		padding: 0 .22rem;
+		background: #fff;
+		margin-bottom: .2rem;
+		line-height: .82rem;
+		font-size: 0;
+		.tab-item {
+			display: inline-block;
+			width: 33.3%;
+			font-size: .28rem;
+			text-align: center;
+			color: #333333;
+			&.actived {
+				color: #FB5566;
+				span {
+					position: relative;
+					display: inline-block;
+					&:after {
+						content: " ";
+						display: block;
+						position: absolute;
+						width: 100%;
+						height: 1px;
+						bottom: .1rem;
+						background: #FB5566;
+					}
+				}
+			}
+		}
+	}
+	.list-con {
+		background: #fff;
+	}
+	.list {
+		width: 100%;
+		padding-left: .48rem;
+		.list-item {
+			height: 1rem;
+			line-height: 1rem;
+			border-bottom: 1px solid #EEEEEE;
+			.left {
+				float: left;
+				width: 5.4rem;
+				height: 1rem;
+				font-size: 0;
+				span {
+					display: inline-block;
+					vertical-align: top;
+				}
+			}
+			.right {
+				float: right;
+				width: 1.62rem;
+				height: 1rem;
+				padding-right: .2rem;
+				text-align: right;
+				font-size: 0;
+				span {
+					display: inline-block;
+					vertical-align: top;
+					color: #999;
+					font-size: .28rem;
+				}
+				.item-icon {
+					width: .34rem;
+					height: .34rem;
+					margin-left: .1rem;
+					vertical-align: middle;
+					&.hot {
+						background: url('../../../assets/images/hot_normal.png') no-repeat;
+						background-size: cover;
+					}
+					&.tend {
+						background: url('../../../assets/images/tend_normal.png') no-repeat;
+						background-size: cover;
+					}
+				}
+			}
+			.item-index {
+				width: .36rem;
+				font-size: .36rem;
+				color: #999;
+				margin-right: .16rem;
+			}
+			.item-type {
+				width: .74rem;
+				height: .34rem;
+				margin-top: .33rem;
+				margin-right: .1rem;
+				font-size: .22rem;
+				line-height: .34rem;
+				color: #fff;
+				text-align: center;
+				background: #999;
+				border-radius: .34rem;
+			}
+			.item-title {
+				width: 3.9rem;
+				white-space: nowrap;
+				font-size: .28rem;
+				color: #666;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			&:after {
+				content: " ";
+				display: block;
+				height: 0;
+				clear: both;
+				overflow: hidden;
+			}
+		}
+		&.rank-brand, &.rank-brandUp {
+			.left {
+				width: 5rem;
+			}
+			.right {
+				width: 2rem;
+			}
+		}
+	}
+}

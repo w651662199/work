@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "精选",
+  "usingComponents": {
+    "component-footer": "../../components/footer/footer",
+    "component-loadingFail": "../../components/loadingFail/loadingFail",
+    "component-dialog": "../../components/dialog/dialog"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "light"
+}

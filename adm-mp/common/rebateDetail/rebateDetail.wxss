@@ -1,0 +1,20 @@
+/* components/rebateDetail/rebateDetail.wxss */
+.rebate-rule{
+  padding: 22rpx 22rpx 30rpx 22rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  background: #ffffff;
+}
+.rebate-rule view{
+  margin: 0;
+  text-indent: 48rpx;
+}
+.rebate-rule .rebate-title{
+  padding: 10rpx 0;
+  font-size: 32rpx;
+  color: #ee2f2f;
+  text-indent: 0;
+}
+.rebate-rule .rebate-desc{
+  color: #808080;
+}

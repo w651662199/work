@@ -1,0 +1,20 @@
+<!--pages/user/rules/rules.wxml-->
+<view class='rules'>
+  <view class='title'>
+    找到带有“红包”标识的内容，完成相应动作即可获得现金红包。
+  </view>
+  <view class='img'>
+  <image src='../../../images/rules.jpg'></image>
+  </view>
+  <view class='rule'>
+    <text class='ruleNumber'>1)分享：你分享的内容被好友点开，可获得现金红包</text>
+      <text class='ruleNumbers'><text class='spot'>·</text><text>你分享的内容被越多人转发分享，或者被越多人点击，你还将获得越多的人气红包；</text></text>
+      <text class='ruleNumbers'><text>·</text><text>多条内容的人气红包，将累加并次日到账</text></text>
+    <text class='ruleNumber'>2)看视频：观看此视频至结尾，即可获得现金红包</text>
+    <text class='ruleNumber'>3)填问卷：完成调研问卷并提交，即可获得红包</text>
+  </view>
+  <view class='explain'>
+    <text>到账金额的说明</text>
+    <text>1国美币等于1元人民币，“我的”页面中“红包金额”显示税前金额，申请提现按照一定规则进行缴税。具体规则请参照国美APP提现规则</text>
+  </view>
+</view>

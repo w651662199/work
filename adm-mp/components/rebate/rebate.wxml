@@ -1,0 +1,8 @@
+<template name="rebate">
+  <view class='share_tips clearfix' wx:if="{{rebateStatus == 1}}">
+    <view id="J_shareRebat" class="share fl" wx:if='{{shareRebateBid > 0}}'>分享赚{{shareRebateBid}}元</view>
+    <view id="J_researchRebate" class="question fl" wx:if='{{researchRebateBid > 0 && researchAppearFlg}}'>调研赚{{researchRebateBid}}元</view>
+    <view id="J_watchRebate" class="video fl" wx:if='{{watchRebateBid > 0}}'>视频赚{{watchRebateBid}}元</view>
+    <navigator class="rebate-btn fl" url='/pages/user/rules/rules' hover-class='none'  wx:if='{{shareRebateBid > 0 || researchRebateBid > 0}}'><image src='../../../images/answer.png'></image> <text>活动说明</text></navigator>
+  </view>
+</template>

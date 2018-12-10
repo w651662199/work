@@ -1,0 +1,218 @@
+@import './base.less';
+@import './common.less';
+body{
+    background: #fff;
+}
+header{
+    padding: 0 .22rem;
+    .header-title{
+        padding: .4rem 0 .3rem 0;
+        text-align: center;
+        font-size: .42rem;
+        color: #333;
+    }
+    .header-description{
+        line-height: .48rem;
+        font-size: .26rem;
+        color: #333;
+    }
+}
+section{
+    padding: 0 .22rem;
+    margin-top: .5rem;
+    .grade{
+        font-size: .36rem;
+        color: #333;
+        span{
+            margin-right: .1rem;
+        }
+        .heart{
+            padding: .4rem 0 .5rem .43rem;
+            ul li {
+                float: left;
+                margin-right: .2rem;
+                width: .34rem;
+                height: .3rem;
+                background: url(../images/grade.png) no-repeat;
+                background-size: 100%;
+            }
+            ul li.selected{
+                background: url(../images/grade-selected.png) no-repeat;
+                background-size: 100%;  
+            }
+        }
+    }
+    .radio{
+        font-size: .36rem;
+        color: #333;
+        h2{
+            padding-bottom: .2rem;
+        }
+        span{
+            margin-right: .1rem;
+        }
+        input[type="radio"]{
+            display: none;
+        }
+        label{
+            width:.24rem;
+            height: .24rem;
+            border: 1px solid #666;
+            border-radius: 50%;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            p{  
+                width:.11rem;
+                height: .1rem;
+                background: #ea5c5e;
+                border-radius: 50%;
+                display: none;
+                margin: auto;
+            }
+        }
+        label.checked{
+            border: 2px solid #ea5c5e;
+        }
+        .formRadio{
+            padding: .2rem .43rem;
+            height: .3rem;
+            position: relative;
+            .radioText{
+                font-size: .28rem;
+                color: #666;
+                position: absolute;
+                left: .76rem;
+                top: -.05rem;
+                padding: .2rem .2rem;
+            }
+            .radioText.checked{
+                color: #ea5c5e;
+            }
+        }
+    }
+    .checkBox{
+        font-size: .36rem;
+        color: #333;
+        margin-top: .3rem;
+        input[type="checkbox"]{
+            display: none;
+        }
+        span{
+            margin-right: .1rem;
+        }
+        .content{
+            ul li{
+                padding: .24rem 0 .24rem .43rem;
+                &:first-child{
+                    margin-top: .16rem;
+                }
+                em{
+                    display: inline-block;
+                    width:.26rem;
+                    height: .28rem;
+                    background: url(../images/realize-normal.png) no-repeat;
+                    background-size: 100%;
+                    border-radius: .03rem;
+                    vertical-align: middle;
+                }
+                em.bgChecked{
+                   background: url(../images/realize.png) no-repeat;
+                   background-size: 100%; 
+                }
+                span{
+                    color: #666;
+                    font-size: .28rem;
+                    vertical-align: middle;
+                    line-height: .28rem;
+                    margin-left: .26rem;
+                    word-break: break-all;
+                }
+            }
+        }
+    }
+    .textBox{
+        font-size: .36rem;
+        color: #333;
+        span{
+            margin-right: .1rem;
+        }
+        #textBox-textarea{
+            width:5.97rem;
+            height: 1.95rem;
+            outline: none;
+            color: #666;
+            margin-left: .43rem;
+            margin-top: .3rem;
+            padding: .18rem;
+            cursor: pointer;
+            border: 1px solid #999;
+        }
+    }
+}
+footer{
+    padding: .5rem .22rem .24rem .22rem;
+    text-align: center;
+    .surveySubmit{
+        display: inline-block;
+        width:4.22rem;
+        height: .88rem;
+        line-height: .88rem;
+        text-align: center;
+        font-size: .32rem;
+        color: #fff;
+        background: #f20c59;
+        border-radius: .88rem;
+        vertical-align: top;
+        cursor: pointer;
+    }
+}
+#popup{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    .content{
+        width:6.4rem;
+        height: 3.86rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -3.2rem;
+        margin-top: -1.93rem;
+        z-index: 11;
+        .top{
+            width:100%;
+            height: 2.98rem;
+            background: #fff;
+            border-radius: .12rem .12rem 0 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .top-finish{
+                p{
+                    color: #333;
+                    font-size: .42rem;
+                    text-align: center;
+                }
+            }
+        }
+        .bottom{
+            display: block;
+            width:100%;
+            height: .88rem;
+            background: #f20c59;
+            text-align: center;
+            line-height: .88rem;
+            color: #fff;
+            font-size: .4rem;
+            border-radius: 0 0 .12rem .12rem;
+        }
+    }
+}
+.none{
+    display: none;
+}

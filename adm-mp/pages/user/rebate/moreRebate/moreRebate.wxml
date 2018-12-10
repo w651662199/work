@@ -1,0 +1,15 @@
+<!--pages/user/rebate/moreRebate/moreRebate.wxml-->
+<view class='moreRebate'>
+  <view class='rebateItem' wx:for="{{list}}" wx:key="{{index}}">
+    <view>
+      <text class='money'>{{item.amount}}</text>
+      <text class='bigShareFont explain'>{{item.title}}</text>
+      <view class='tagging'>
+        <text class='state smallShareFont'>{{item.desc}}</text>
+        <text class='time smallShareFont'>{{item.time}}</text>
+      </view>
+    </view>
+    <view class='line'></view>
+  </view>
+  <view class='tips' wx:if="{{isExceed}}">系统最多保留20条红包记录</view>
+</view>

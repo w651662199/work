@@ -1,0 +1,44 @@
+/* compoments/list/list.wxss */
+.share{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200rpx;
+  height: 70rpx;
+  background: #E82C2C;
+  border-radius: 12rpx;
+  position: relative;
+}
+.share image{
+  width: 26rpx;
+  height: 32rpx;
+}
+.share text{
+  font-size: 32rpx;
+  color: #FFFFFF;
+  margin-left: 10rpx;
+}
+.upvote {
+  width: 110rpx;
+  height: 40rpx;
+  float: right;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  text-align: center;
+  margin-left: 20rpx;
+  position: relative;
+  color: #666;
+  border: 1rpx solid #999;
+  border-radius: 40rpx;
+}
+.upvote.parised {
+    color: #f20c59;
+    border: 1rpx solid #f20c59;
+}
+.share .sharebtn{
+  position:absolute;
+  top:0;
+  width:200rpx;
+  height:70rpx;
+  opacity: 0;
+}

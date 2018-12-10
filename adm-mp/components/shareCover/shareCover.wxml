@@ -1,0 +1,15 @@
+<view class="cover-view" catchtouchmove='true'>
+  <view class="action-sheet">
+    <view class="title">分享成功后得 {{shareRebateBid}} 元</view>
+    <view class="desc">分享后，内容被打开即有机会获得红包</view>
+    <view class="action">
+      <button class="btn-share" open-type="share">
+        <image src="/images/share_wx.png"></image>
+        分享给微信好友
+      </button>
+    </view>
+    <view class="action">
+      <button class="btn-cancel" bindtap="hideCover">取消</button>
+    </view>
+  </view>
+</view>

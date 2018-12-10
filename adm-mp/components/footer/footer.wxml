@@ -1,0 +1,11 @@
+<!--compoments/list/list.wxml-->
+<view class='footer-list'>
+  <slot name="before"></slot>
+  <view class="footer-content">
+    <view class="share" catchtap='doShare'>
+      <image src='../../images/share@2x.png'></image>
+      <text>分享</text>
+      <button open-type='share' class='sharebtn' data-landingurl="{{footerItem.contentObject.landingUrl}}" hidden='{{footerItem.sharePraiseNum && footerItem.sharePraiseNum.rebateStatus == 1 && footerItem.sharePraiseNum.shareRebateBid > 0}}' data-title="{{footerItem.contentObject.title}}" data-i="{{index}}" data-image="{{footerItem.contentObject.coverImg}}" data-q="{{footerItem.q}}">11</button>
+    </view>
+  </view>
+</view>

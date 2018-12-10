@@ -1,0 +1,36 @@
+<import src="../../../components/rebate/rebate.wxml"/>
+<view class='outPage {{rebateRule.showRule?"overflowHidden":""}}'>
+  <view class='itemDetail' hidden='{{showLoadingFail}}'>
+    <!--header  -->
+    <view class="header_box">
+      <image src='{{data.image}}' mode='widthFix' class='lazy-load'></image>
+    </view>
+    <!--content  -->
+    <view class='detailContent'>
+      <view class="content_header">
+        <view class="detail-title">{{data.title}}</view>
+        <template is="rebate" data="{{...rebateData}}"></template>
+
+        <text class="p_box">{{data.description}}</text>
+      </view>
+      <view class="content_main">
+        <navigator url='../../../common/toWebPage/toWebPage?url=https://item.m.gome.com.cn/product-{{item.productId}}-{{item.skuId}}.html' hover-class="none" class='item-content clearfix item-price' wx:for="{{data.webpageItems}}" wx:key="{{index}}">
+          <image src='{{item.image}}' class='lazy-load'></image>
+          <view class='content-title'>{{item.description}}</view>
+          <view class='content-price'><text>￥{{item.price}}</text></view>
+        </navigator>
+      </view>
+    </view>
+    <!--footer  -->
+    <view class="detail_footer">
+      <text>价格以商品详情页为准</text>
+    </view>
+      <!--回到首页  -->
+    <view class="goHome" bindtap='goHome' wx:if="{{options.sourceType == '2'}}">
+      <image src='../../../images/go-home.png' mode='widthFix'></image>
+    </view>
+    <component-tools query="{{options}}" rebate="{{rebateData}}" item="{{data}}" userId="{{userId}}" bind:showShareCover="showShareCover"></component-tools>
+  </view>
+  <component-loadingFail wx:if='{{showLoadingFail}}' bind:reload='_reload' ></component-loadingFail>
+</view>
+<component-cover wx:if="{{isShowShareCover}}" shareRebateBid="{{rebateData.shareRebateBid}}" bind:hideShareCover="hideShareCover"></component-cover>

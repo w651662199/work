@@ -1,0 +1,35 @@
+<!--components/rebateDetail/rebateDetail.wxml-->
+<view class="rebate-rule">
+  <view class="share-rebate">
+    <view class="rebate-title">分享赚：</view>
+    <view class="rebate-desc">分享带有“分享赚”标识的内容，被好友点开，你即可获得现金红包，经好友分享被别人点开后,你会再得到红包。</view>
+    <view class="rebate-desc">注：</view>
+    <view class="rebate-desc">Q：为什么好友打开我的分享内容后，我没有获得红包？</view>
+    <view class="rebate-desc">A：好友打开内容时活动已截止。</view>
+  </view>
+  <view class="share-rebate">
+    <view class="rebate-title">人气红包：</view>
+    <view class="rebate-desc">分享带有“分享赚”标识的内容，被越多人转发分享，或者被越多人点击，获得的人气红包金额越多。多条内容的人气红包，将在累加后次日到账。</view>
+    <view class="rebate-desc">注：</view>
+    <view class="rebate-desc">Q：为什么分享给好友后没有获得人气红包？</view>
+    <view class="rebate-desc">A：此条内容没有被人点击，快让好友点击查看。</view>
+  </view>
+  <view class="video-rebate">
+    <view class="rebate-title">视频赚：</view>
+    <view class="rebate-desc">完整观看带有“视频赚”标识的视频，即可获得现金红包。观看多条视频，得多次红包。</view>
+    <view class="rebate-desc">注：</view>
+    <view class="rebate-desc">Q：为什么完整观看视频后，没有获得视频赚？</view>
+    <view class="rebate-desc">A：观看完视频前活动已截止。</view>
+  </view>
+  <view class="survey-rebate">
+    <view class="rebate-title">调研赚：</view>
+    <view class="rebate-desc">点击带有“调研赚”标识的内容，完成调研问卷并提交，即可获得现金红包。</view>
+    <view class="rebate-desc">注：</view>
+    <view class="rebate-desc">Q：为什么提交问卷后，没有获得调研赚？</view>
+    <view class="rebate-desc">A：提交问卷时活动已截止。</view>
+  </view>
+  <view class="survey-rebate">
+    <view class="rebate-title">到账金额的说明：</view>
+    <view class="rebate-desc">“我的”页面中“累计收入”显示税前金额，申请提现按照一定规则进行缴税。具体规则请参照国美APP提现规则。</view>
+  </view>
+</view>

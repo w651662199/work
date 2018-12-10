@@ -1,0 +1,20 @@
+<view class='wx_dialog_container'  catchtouchmove='true'>
+    <view class='wx-mask'></view>
+    <view class='wx-dialog'>
+      <view class='dialog-close' bindtap='cancelEvent'>
+        <image src='../../images/dialog-close@2x.png'></image>
+      </view>
+      <view class='dialog-redpacket' hidden='{{dialogItems.type!="redpacket"}}'>
+        <view class='redpacket-item border-bottom-1px' wx:if="{{dialogItems.shareRebateBid > 0}}">
+          <image src='../../images/dialog-share@2x.png'></image>
+          <text>分享得红包 {{dialogItems.shareRebateBid}}</text>
+          <image class='check' src='../../images/dialog-check@2x.png' hidden='{{dialogItems.shareRebateGotFlg==0}}'></image>
+        </view>
+        <view class='redpacket-item border-bottom-1px' wx:if="{{dialogItems.researchRebateBid > 0}}">
+          <image src='../../images/dialog-question@2x.png'></image>
+          <text>答问卷得红包 {{dialogItems.researchRebateBid}}</text>
+          <image class='check' src='../../images/dialog-check@2x.png' hidden='{{dialogItems.researchRebateGotFlg==0}}'></image>
+        </view>
+      </view>
+    </view>
+</view>

@@ -1,0 +1,40 @@
+<import src="../../../components/rebate/rebate.wxml"/>
+<view class='outPage {{rebateRule.showRule?"overflowHidden":""}}'>
+  <view class='shopDetail' hidden='{{showLoadingFail}}'>
+  <!--header  -->
+    <view class="shop_header">
+      <view class="shop_inner">
+        <view class="shop_logo">
+          <image class='shop_icon' src='{{data.image}}' mode='aspectFit'></image>
+        </view>
+        <text class='shop_title'>{{data.title}}</text>
+        <template is="rebate" data="{{...rebateData}}"></template>
+        <view class='collectNum'>关注数：<text>{{data.collectionQuantity}}</text></view>
+        <navigator url='../../../common/toWebPage/toWebPage?url=https://m.gome.com.cn/shop-{{data.shopId}}.html' hover-class="none" class='enterShop'>进入店铺</navigator>
+      </view>
+    </view>
+    <!--content  -->
+    <view class="shop_content">
+      <view class="shop_info">
+        <text>{{data.description}}</text>
+      </view>
+      <view wx:for="{{data.webpageItems}}" wx:key="{{index}}" class='item_info'>
+        <image mode='widthFix' src="{{item.image}}" class='lazy-load'></image>
+        <view class="info_name">{{item.name}}</view>
+        <navigator url='../../../common/toWebPage/toWebPage?url=https://item.m.gome.com.cn/product-{{item.productId}}-{{item.skuId}}.html' hover-class="none" class="info_btn"><text>￥{{item.price}}</text> | 查看详情</navigator>
+        <view class='info_des'>{{item.description}}</view>
+      </view>
+    </view>
+    <!--footer  -->
+    <view class="detail_footer">
+      <text>价格以商品详情页为准</text>
+    </view>
+      <!--回到首页  -->
+    <view class="goHome" bindtap='goHome' wx:if="{{options.sourceType == '2'}}">
+      <image src='../../../images/go-home.png' mode='widthFix'></image>
+    </view>
+    <component-tools query="{{options}}" rebate="{{rebateData}}" item="{{data}}" userId="{{userId}}" bind:showShareCover="showShareCover"></component-tools>
+  </view>
+  <component-loadingFail wx:if='{{showLoadingFail}}' bind:reload='_reload' ></component-loadingFail>
+</view>
+<component-cover wx:if="{{isShowShareCover}}" shareRebateBid="{{rebateData.shareRebateBid}}" bind:hideShareCover="hideShareCover"></component-cover>

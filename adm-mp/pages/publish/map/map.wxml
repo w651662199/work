@@ -1,0 +1,37 @@
+<view class="search-bar">
+  <view class="search-con">
+    <icon type="search" size="14" color="#ddd"></icon>
+    <input class="search-input" placeholder="搜索位置" placeholder-style="color:#ddd" bindfocus="searchBarFocus" bindinput="searchInput" bindconfirm="searchInputConfirm"></input>
+  </view>
+</view>
+<view class="map_container" hidden="{{isShowCover}}">
+  <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="16" markers="{{markers}}"bindregionchange="regionChange"></map>  
+</view>
+<view class="map_text">
+  <scroll-view class="scroll-view" scroll-y style="height: 380rpx;">
+    <view class="no-pos"></view>
+    <view class="pos-list">
+      <view class="pos-item" wx:for="{{posShowList}}" wx:key="{{item.id}}" data-item="{{item}}" bindtap="posItemTap">
+        <view class="pos-msg">
+          <text class="pos-name">{{item.name}}</text>
+          <text class="pos-address">{{item.address}}</text>
+        </view>
+        <icon type="success" size="20" color="#E82C2C" wx:if="{{selectPos.id == item.id}}"></icon>
+        
+      </view>
+    </view>
+  </scroll-view>
+  <view class="done-btn"><button class="btn" bindtap="submit">确定</button></view>
+</view>
+<view class="search-box" animation="{{searchAnimation}}">
+  <scroll-view class="scroll-view" scroll-y>
+    <view class="pos-list">
+      <view class="pos-item" wx:for="{{searchPoiList}}" wx:key="{{item.id}}" data-item="{{item}}" bindtap="searchItemTap">
+        <view class="pos-msg">
+          <text class="pos-name">{{item.name}}</text>
+          <text class="pos-address">{{item.district}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,59 @@
+<!--pages/details/video/video.wxml-->
+<import src="../../../components/rebate/rebate.wxml"/>
+<view class='outPage {{rebateRule.showRule?"overflowHidden":""}}'>
+  <view class='videoDetail' hidden='{{showLoadingFail}}'>
+    <view class='video_header'>
+      <view class='video-box'>  
+        <video src='{{videoUrl}}' poster='{{items.image}}' mode='widthFix' bindended='videoPlayOver' id='myVideo' autoplay='{{autoplay}}'>
+         <cover-view bindtap='play' hidden='{{coverView}}' class='coverBox'>
+            <cover-image src='{{items.image}}'></cover-image> 
+            <cover-image class="coverImg" src="../../../images/video.png" />
+         </cover-view>
+        </video>
+      </view>
+      <view class='video_content'>
+        <view class='detail-title'>{{items.title}}</view>
+        <!--share  -->
+        <template is="rebate" data="{{...rebateData}}"></template>
+        <view class='detail-des'>
+          {{items.description}}
+        </view>
+      </view>
+    </view>
+    <view class='video_templet_list' wx:if='{{items.promotionType == 1}}'>
+      <view class='video_list' wx:for='{{items.webpageItems}}' wx:key='{{item.webpageId}}' wx:item='{{item}}'>
+        <navigator url='../../../common/toWebPage/toWebPage?url=https://item.m.gome.com.cn/product-{{item.productId}}-{{item.skuId}}.html' hover-class="none" class='item-price'>
+          <image src='{{item.image}}' mode='widthFix' class='lazy-load'></image>
+          <view class='shop_item_right'>
+            <view class='right-title'>{{item.name}}</view>
+            <view class='right-desc'>{{item.description}}</view>
+            <text>￥{{item.price}}</text>
+          </view>
+        </navigator>
+      </view>
+      <view class='detail_footer'>
+        价格以商品详情页为准
+      </view>
+    </view>
+    <view class='video_templet_shop' wx:if='{{items.promotionType == 2}}'>
+      <view class='video_inner'>
+        <view class='shop_logo'>
+          <image src='{{items.webpageItems[0].image}}' mode='widthFix'></image>
+        </view>
+        <view class='shop-title'>{{items.webpageItems[0].name}}</view>
+        <view class='shop-desc'>{{items.webpageItems[0].description}}</view>
+        <!-- <view class='goShop'>进入店铺</view> -->
+        <navigator url='../../../common/toWebPage/toWebPage?url=https://m.gome.com.cn/shop-{{items.webpageItems[0].shopId}}.html' hover-class="none" class='goShop'>
+        进入店铺
+        </navigator>
+      </view>
+    </view>
+    <!--回到首页  -->
+    <view class="goHome" bindtap='goHome' wx:if="{{options.sourceType == '2'}}">
+      <image src='../../../images/go-home.png' mode='widthFix'></image>
+    </view>
+    <component-tools query="{{options}}" rebate="{{rebateData}}" item="{{data}}" userId="{{userId}}" bind:showShareCover="showShareCover"></component-tools>
+  </view>
+  <component-loadingFail wx:if='{{showLoadingFail}}' bind:reload='_reload' ></component-loadingFail>
+</view>
+<component-cover wx:if="{{isShowShareCover}}" shareRebateBid="{{rebateData.shareRebateBid}}" bind:hideShareCover="hideShareCover"></component-cover>

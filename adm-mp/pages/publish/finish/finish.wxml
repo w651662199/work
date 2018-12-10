@@ -1,0 +1,8 @@
+<view class="con">
+  <view class="finish-icon">
+    <image src="/images/finish.png"></image>
+  </view>
+  <view class="msg"><text>发布完成，审核中</text></view>
+  <button class="btn btn-confirm" bindtap="goPublish">继续发布</button>
+  <button class="btn btn-cancel" bindtap="goHome">去逛逛</button>
+</view>

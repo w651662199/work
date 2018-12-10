@@ -1,0 +1,70 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/details/topic/topic",
+    "pages/details/product/product",
+    "pages/details/video/video",
+    "pages/details/shop/shop",
+    "pages/details/story/story",
+    "pages/details/survey/survey",
+    "pages/details/publishContent/publishContent",
+    "components/loadingFail/loadingFail",
+    "common/login/login",
+    "pages/details/item/item",
+    "components/footer/footer",
+    "pages/user/user",
+    "pages/user/rebateRecord/rebateRecord",
+    "pages/user/news/news",
+    "pages/user/release/release",
+    "pages/user/rules/rules",
+    "pages/user/rebate/rebate",
+    "pages/user/rebate/moreRebate/moreRebate",
+    "components/dialog/dialog",
+    "common/toWebPage/toWebPage",
+    "common/webPage/webPage",
+    "common/rebateDetail/rebateDetail",
+    "pages/active/bag/bag",
+    "pages/active/bimg/bimg",
+    "pages/publish/map/map",
+    "pages/publish/line/line",
+    "pages/publish/publish/publish",
+    "pages/publish/finish/finish"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "美媒榜",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#ff1440",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "精选",
+        "iconPath": "images/tabbar_not_home.png",
+        "selectedIconPath": "images/tabbar_home.png"
+      },
+      {
+        "pagePath": "pages/publish/publish/publish",
+        "text": "发布",
+        "iconPath": "images/tabbar_publish.png",
+        "selectedIconPath": "images/tabbar_publish_active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/tabbar_not_user.png",
+        "selectedIconPath": "images/tabbar_user.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  }
+}

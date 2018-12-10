@@ -1,0 +1,59 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.clearfix::after{
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+page {
+  font-family: "PingFangSC-Regular", "Microsoft YaHei",Arial,"Helvetica", sans-serif;
+  height: 100%;
+  background: #fff;
+  overflow: auto;
+}
+image {
+  border: 0 none;
+  vertical-align: middle;
+}
+.video--lazy-load,.product--lazy-load,.item--lazy-load,.topic--lazy-load,.shop--lazy-load,.lazy-load{
+  background: url('https://mevent.meixincdn.com/mm/image/placeholder.jpg') no-repeat #c7c7c7;
+  background-size: contain;
+  background-position: 50%;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.outPage {
+  height:100%;
+  background:#fff;
+}
+.overflowHidden {
+  overflow: hidden;
+}
+.border-1px {
+  position: relative;
+}
+.border-1px::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+  width: 200%;
+  height: 200%;
+  transform-origin: 0 0;
+  transform: scale(0.5, 0.5);
+  box-sizing: border-box;
+}

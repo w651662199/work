@@ -1,0 +1,60 @@
+/* pages/user/rebate/moreRebate/moreRebate.wxss */
+.rebateItem {
+  height: 194rpx;
+  padding: 30rpx 14rpx 0rpx 30rpx;
+  background: #fff;
+  position: relative;
+}
+.line {
+  height: 1rpx;
+  background: rgba(221,221,221,0.50);
+  position: absolute;
+  bottom: 0;
+  width: 706rpx;
+}
+.money {
+  font-size: 32rpx;
+  color: #E82C2C;
+  display: block;
+  line-height: 44rpx;
+  margin-bottom: 10rpx;
+}
+.bigShareFont {
+  color: #999999;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+.smallShareFont {
+  color: #999999;
+  font-size: 24rpx;
+  line-height: 34rpx;
+}
+.explain {
+  display: inline-block;
+  color: #666666;
+  margin-bottom: 12rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.tagging {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 16rpx;
+}
+.moreRebate {
+  height: 100%;
+  background: #f3f5f7;
+}
+.tips {
+  text-align: center;
+  color: #999999;
+  margin-top: 20rpx;
+  height: 60rpx;
+  line-height: 28rpx;
+  font-size: 28rpx;
+}

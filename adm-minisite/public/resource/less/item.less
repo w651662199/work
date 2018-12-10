@@ -1,0 +1,106 @@
+@import './base.less';
+@import './common.less';
+.itemDetail{
+    width: 100%;
+    padding-bottom: 2rem;
+    .header_img{
+        width: 100%;
+        height: auto;
+        background: #fff;
+    }
+    .header_box{
+        font-size: 0;
+        background: #fff;
+    }
+    .detail_content{
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid #ddd;
+        .content_header{
+            padding: .3rem .16rem .38rem;
+            background: #fff;
+            border-bottom: .5px solid #ddd;
+            .p_box{
+                font-size: .32rem;
+                color: #000;
+                line-height: .52rem;
+                margin: .3rem 0 0 0;
+                border-top: 1px solid #f1f1f1;
+                padding: .4rem 0 0 0;
+            }
+            .share_tips{
+                margin: .14rem 0 0;
+            }
+        }
+        .content_main{
+            margin-top:.18rem;
+            background: #fff;
+            padding:0 .22rem;
+            overflow: hidden;
+            border-top: .5px solid #ddd;
+            ul{
+                li{
+                    width: 50%;
+                    float:left;
+                    padding-top: .22rem;
+                    padding-bottom: .5rem;
+                    border-top: 1px solid #f0f0f0;
+                    overflow:hidden;
+                    -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+                    border-right: 1px solid #f0f0f0;
+                    &:nth-child(1){
+                        border-top:0 none;
+                    }
+                    &:nth-child(2){
+                        border-top:0 none;
+                    }
+                    img{
+                        width: 3.36rem;
+                        height: 3.36rem;
+                        margin-bottom: .1rem;
+                    }
+                    h2{
+                        font-size: .26rem;
+                        height: .34rem;
+                        line-height: .34rem;
+                        color:#666;
+                        margin-bottom: .06rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 1;
+                    }
+                    p{
+                        font-size: .26rem;
+                        color: #ea5c5e;
+                        font-weight: bold;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                    }
+                    &:nth-child(even){
+                        float:right;
+                        text-align: right;
+                        border-right: 0 none;
+                        h2{
+                           text-align: left; 
+                           padding-left: .15rem;
+                        }
+                        p{
+                            text-align: left;
+                            padding-left: .15rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    h2{
+        font-size: .48rem;
+        color: #333;
+    }
+}

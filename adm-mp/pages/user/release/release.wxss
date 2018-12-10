@@ -1,0 +1,117 @@
+/* pages/user/release/release.wxss */
+.list .contentItems {
+  height: 226rpx;
+  border-bottom: 20rpx solid #f4f5f7;
+  background: white;
+  position: relative;
+}
+.list .contentItems .contentTop {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+}
+.contentItems .contentTop image {
+  width: 220rpx;
+  height: 124rpx;
+  margin: 24rpx 20rpx 20rpx 30rpx;
+  border-radius: 8rpx;
+}
+.contentTop .content .title {
+  font-size: 28rpx;
+  width: 464rpx;
+  margin-top: 24rpx;
+  margin-right: 20rpx;
+  color: #666666;
+  line-height: 44rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.contentTop .content .tag {
+  display: block;
+  margin-top: 8rpx;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+.contentBot {
+  position: absolute;
+  bottom: 24rpx;
+  width: 100%;
+}
+.contentBot .status {
+  margin-left: 30rpx;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  display: inline-block;
+  width: 125rpx;
+}
+.contentBot .time {
+  font-size: 24rpx;
+  line-height: 34rpx;
+  color:  #969696;
+  position: absolute;
+  right: 30rpx;
+  bottom:0;
+}
+.contentFl {
+  position: absolute;
+  width: 100%;
+  height: 226rpx;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background: white;
+}
+.del {
+  width: 120rpx;
+  height: 223rpx;
+  background: red;
+  color: white;
+  text-align: center;
+  line-height: 223rpx;
+  position: absolute;
+  top: 0.5rpx;
+  right: 0;
+  z-index: 0;
+  font-size: 28rpx; 
+}
+.unaudited {
+  color: #4463E4;
+}
+.passAudited {
+  color: #5A6066;
+}
+.notAudited {
+  color: #E65050;
+}
+.contentTop .noImgContent .title {
+  width: 690rpx;
+  margin-left: 30rpx;
+}
+.contentTop .noImgContent .tag {
+  margin-left: 30rpx;
+}
+.noMoreContent {
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size:26rpx;
+  color:#999;
+  background: #f4f5f7;
+}
+.gotTop {
+  position: fixed;
+  bottom: 80rpx;
+  right: 22rpx;
+  z-index: 10;
+}
+.gotTop image{
+  width:82rpx;
+  height: 82rpx;
+}

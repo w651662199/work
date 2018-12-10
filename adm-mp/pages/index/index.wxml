@@ -1,0 +1,197 @@
+<view style="height:100%;">
+  <view class='index' wx:if='{{!showLoadingFail}}'>
+    <view id='index-banner' wx:if="{{false}}">
+      <swiper class="swiper-box" interval="3000" autoplay indicator-active-color="#E61212" style="height: 376rpx;" indicator-dots circular bindchange="bannerImpression">
+        <swiper-item wx:for="{{topImageContents}}" wx:key="{{index}}" wx:for-item="topContent" class='swiperItem' bindtap="toWebPageClick" data-clickurl="{{topContent.content.clickUrl}}" data-landpage="{{topContent.content.landPage}}">
+          <image src="{{topContent.content.resourceUrl}}" lazy-load="true" class='lazy-load' ></image>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class='nav-placeholder' hidden='{{!fixedNav}}'></view>
+    <view class='{{fixedNav?"fixed":""}} index-nav clearfix' id='index-nav'>
+      <view class='{{navSelectIndex === 1 ? "selectedNav":""}} nav-item border-1px' bindtap='selectedNavBar' data-selectIndex="1">推荐</view>
+      <view class='{{navSelectIndex === 3 ? "selectedNav":""}} nav-item border-1px' bindtap='selectedNavBar' data-selectIndex="3">最热</view>
+      <view class='{{navSelectIndex === 2 ? "selectedNav":""}} nav-item border-1px' bindtap='selectedNavBar' data-selectIndex="2">最新</view>
+      <view class='{{navSelectIndex === 4 ? "selectedNav":""}} nav-item border-1px' bindtap='selectedNavBar' data-selectIndex="4">有红包</view>
+    </view>
+    <view class='index-list'>
+      <block wx:for="{{items}}" wx:key="{{index}}" wx:for-item="item">
+        <!-- 发现、好物、好店 -->
+        <view class="{{imPressionIds['id'+item.contentObject.adId]?'':'impression-item'}} index-list-item item-three" wx:if="{{item.contentObject.ctype==46||item.contentObject.ctype==44||item.contentObject.ctype==48}}" id="id{{item.contentObject.adId}}" data-url="{{item.contentObject.impressionUrl}}">
+          <view class='main' bindtap='light' data-clickurl="{{item.contentObject.clickUrl}}" data-landingurl="{{item.contentObject.landingUrl}}" data-q="{{item.q}}">
+            <view class="item-three-top">
+              <image src="{{item.contentObject.coverImg}}" lazy-load="true" class='lazy-load' mode="widthFix"></image>
+            </view>
+            <view class="item-three-bottom">
+              <view class='title'>{{item.contentObject.title}}</view>
+              <view class='share-redpacket'>
+                <view class='space-con' hidden='{{item.sharePraiseNum.rebateStatus!=0}}'></view>
+                <view class='share-redpacket-left' hidden='{{item.sharePraiseNum.rebateStatus==0 || item.sharePraiseNum.totalRebateBid == 0}}'>
+                  <view class='redpacket-top' catchtap='showRebateDetail' data-sharepraisenum="{{item.sharePraiseNum}}">
+                    <image src='../../images/redpacket@2x.png'></image>
+                    <text>最高可得红包 {{item.sharePraiseNum.totalRebateBid}}</text>
+                  </view>
+                  <view class='redpacket-bottom' hidden='{{!item.sharePraiseNum.rebateGotUserNum}}'>{{item.sharePraiseNum.rebateGotUserNum}}人已得红包</view>
+                </view>
+                <view class='share-redpacket-right'>
+                  <component-footer index="{{index}}" footerItem="{{item}}" bind:showShareCover="showShareCover"></component-footer>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- 清单 -->
+        <view class="{{imPressionIds['id'+item.contentObject.adId]?'':'impression-item'}} index-list-item item-list" wx:if="{{item.contentObject.ctype==45}}" id="id{{item.contentObject.adId}}" data-url="{{item.contentObject.impressionUrl}}">
+          <view class='main' bindtap='light' data-clickurl="{{item.contentObject.clickUrl}}" data-landingurl="{{item.contentObject.landingUrl}}" data-q="{{item.q}}">
+            <view class="item-list-top" style="position:relative;">
+              <image src="{{item.contentObject.coverImg}}" lazy-load="true" class='lazy-load' mode="widthFix"></image>
+              <view class='title'>{{item.contentObject.title}}</view>
+            </view>
+            <view class='item-list-bottom'>
+              <view class='list-bottom-swiper'>
+                <swiper display-multiple-items='3' style="height: 240rpx;">
+                  <swiper-item wx:for="{{item.contentObject.images}}" wx:key="{{index}}" wx:for-item="listImage" class="swiperItem">
+                    <view>
+                      <image src="{{listImage}}" lazy-load="true" class='lazy-load'></image>
+                    </view> 
+                  </swiper-item>
+                </swiper>
+              </view>
+              <view class='share-redpacket'>
+                <view class='space-con' hidden='{{item.sharePraiseNum.rebateStatus!=0}}'></view>
+                <view class='share-redpacket-left' hidden='{{item.sharePraiseNum.rebateStatus==0 || item.sharePraiseNum.totalRebateBid == 0}}'>
+                  <view class='redpacket-top' catchtap='showRebateDetail' data-sharepraisenum="{{item.sharePraiseNum}}">
+                    <image src='../../images/redpacket@2x.png'></image>
+                    <text>最高可得红包 {{item.sharePraiseNum.totalRebateBid}}</text>
+                  </view>
+                  <view class='redpacket-bottom' hidden='{{!item.sharePraiseNum.rebateGotUserNum}}'>{{item.sharePraiseNum.rebateGotUserNum}}人已得红包</view>
+                </view>
+                <view class='share-redpacket-right'>
+                  <component-footer index="{{index}}" footerItem="{{item}}" bind:showShareCover="showShareCover"></component-footer>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- 国美社交内容 -->
+        <view class="{{imPressionIds['id'+item.contentObject.adId]?'':'impression-item'}} index-list-item item-gome" wx:if="{{item.contentObject.ctype==3}}" id="id{{item.contentObject.adId}}" data-url="{{item.contentObject.impressionUrl}}">
+          <view class='item-gome-content' bindtap="toWebPageClick" data-clickurl="{{item.contentObject.clickUrl}}" data-landpage="{{item.contentObject.landingUrl}}">
+            <view class='content-top clearfix'>
+              <view class='{{item.contentObject.imgWidth!=item.contentObject.imgHeight?"ratio16-9":"ratio1-1"}} top-image fl'>
+                <image src='{{item.contentObject.coverImg}}' bindload="indexImageOnload" lazy-load="true" class='lazy-load' data-index="{{index}}"></image>
+              </view>
+              <view class='top-title fl'>
+                {{item.contentObject.title}}
+              </view>
+            </view>
+            <view class='content-bottom clearfix'>
+              <view class='bottom-from fl'>
+                来自：{{item.contentObject.dataSource}}
+              </view>
+              <view class='fr'>
+                <component-footer index="{{index}}" footerItem="{{item}}" bind:showShareCover="showShareCover"></component-footer>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- 微广告 -->
+        <view class="{{imPressionIds['id'+item.contentObject.adId]?'':'impression-item'}} index-list-item item-micro" wx:if="{{item.contentObject.ctype==2}}" id="id{{item.contentObject.adId}}" data-url="{{item.contentObject.impressionUrl}}" data-type="{{item.type}}">
+          <view class='main' bindtap='light' data-clickurl="{{item.contentObject.clickUrl}}" data-landingurl="{{item.contentObject.landingUrl}}">
+            <!-- 有封面有标题 -->
+            <block wx:if="{{item.contentObject.title}}">
+              <view class='micro-have-top'>
+                <image src="{{item.contentObject.coverImg}}" lazy-load="true" class='lazy-load'></image>
+              </view>
+              <view class='micro-have-bottom'>
+                <view class='title'>{{item.contentObject.title}}</view>
+                <view class='micro-tags clearfix'>
+                  <view wx:for="{{item.contentObject.tags}}" wx:key="{{index}}" wx:for-item="tag">
+                    #{{tag}}
+                  </view>
+                </view>
+                <view class='micro-map' hidden='{{!item.contentObject.posName}}' catchtap='jumpMap' data-loc="{{item.contentObject.longitude}},{{item.contentObject.latitude}}" data-city="{{item.contentObject.city}}">
+                  <image src='../../images/map_location@2x.png'></image>
+                  <text>{{item.contentObject.posName}}</text>
+                </view>
+              </view>
+            </block>
+            <!-- 没有封面和标题 -->
+            <block wx:else>
+              <view class='micro-no'>
+                <view class='main-text'>
+                  <text>{{item.contentObject.text}}</text>
+                  <text class='main-text-after' wx:if='{{item.contentObject.showFullText}}'>全文</text>
+                  <text class='main-text-after link' wx:if='{{item.contentObject.exLink&&!item.contentObject.showFullText}}' catchtap='textPaste' data-url="{{item.contentObject.exLink}}">网页链接</text>
+                </view>
+                <view class='micro-tags clearfix'>
+                  <view wx:for="{{item.contentObject.tags}}" wx:key="{{index}}" wx:for-item="tag">
+                    #{{tag}}
+                  </view>
+                </view>
+                <view class='micro-no-image' hidden='{{item.contentObject.images.length==0}}'>
+                  <!-- 一张图 -->
+                  <block wx:if="{{item.contentObject.images.length==1}}">
+                    <view class='one-image {{item.contentObject.imgWidth>item.contentObject.imgHeight?"w-large":"h-large"}}'>
+                      <image src='{{item.contentObject.images[0]}}' bindload="indexImageOnload" lazy-load="true" class='lazy-load' data-index="{{index}}" data-currenturl="{{item.contentObject.images[0]}}" catchtap='previewImage' mode="widthFix"></image>
+                    </view>
+                  </block>
+                  <!-- 2-3张图 -->
+                  <block wx:elif="{{item.contentObject.images.length>1&&item.contentObject.images.length<=3}}">
+                    <view class='two-three-image'>
+                      <block wx:for="{{item.contentObject.images}}" wx:for-index="imageIndex" wx:key="{{index}}" wx:for-item="microImage">
+                        <image src='{{microImage}}' lazy-load="true" data-index="{{index}}" class='lazy-load' mode='aspectFill' data-currenturl="{{microImage}}" catchtap='previewImage'></image>
+                      </block>
+                    </view>
+                  </block>
+                  <!-- 多张图 -->
+                  <block wx:else>
+                    <view class='more-image'>
+                      <swiper display-multiple-items='3.5' style="height: 200rpx;">
+                        <swiper-item wx:for="{{item.contentObject.images}}" wx:for-index="{{imageIndex}}" wx:key="{{index}}" wx:for-item="microImage" class="swiperItem">
+                          <image src="{{microImage}}" lazy-load="true" data-index="{{index}}" class='lazy-load' mode='aspectFill' data-currenturl="{{microImage}}" catchtap='previewImage'></image> 
+                        </swiper-item>
+                      </swiper>
+                    </view>
+                  </block>
+                </view>
+                <view class='micro-map' hidden='{{!item.contentObject.posName}}' catchtap='jumpMap' data-loc="{{item.contentObject.longitude}},{{item.contentObject.latitude}}" data-city="{{item.contentObject.city}}">
+                  <image src='../../images/map_location@2x.png'></image>
+                  <text>{{item.contentObject.posName}}</text>
+                </view>
+              </view>
+            </block>
+            <view class='micro-share clearfix'>
+              <view class='fr'>
+                <component-footer index="{{index}}" footerItem="{{item}}" bind:showShareCover="showShareCover"></component-footer>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class='noMoreContent' hidden='{{!noMoreData}}'>没有更多内容了</view>
+    <view class='gotTop' hidden='{{!showGoTop}}' bindtap='goTop'>
+      <image src='../../images/go-top.png'></image>
+    </view>
+    <loading hidden="{{loading}}">
+        加载中...
+    </loading>
+    <component-dialog wx:if='{{showDialog}}' dialogItems="{{dialogDetail}}" bind:hideDialog='hideDialog'></component-dialog>
+  </view>
+  <component-loadingFail wx:if='{{showLoadingFail}}' bind:reload='_reload' ></component-loadingFail>
+</view>
+<view class="cover-view" wx:if="{{isShowShareCover}}" catchtouchmove='true'>
+  <view class="action-sheet">
+    <view class="title">分享成功后得 {{shareItem.sharePraiseNum.shareRebateBid}} 元</view>
+    <view class="desc">分享后，内容被打开即有机会获得红包</view>
+    <view class="action">
+      <button class="btn-share" open-type="share" data-title="{{shareItem.contentObject.title}}" data-image="{{shareItem.contentObject.coverImg}}" data-landingUrl="{{shareItem.contentObject.landingUrl}}" data-q="{{shareItem.q}}" data-id="shareItem.id">
+        <image src="/images/share_wx.png"></image>
+        分享给微信好友
+      </button>
+    </view>
+    <view class="action">
+      <button class="btn-cancel" bindtap="hideShareCover">取消</button>
+    </view>
+  </view>
+</view>

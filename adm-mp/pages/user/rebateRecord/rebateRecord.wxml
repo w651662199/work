@@ -1,0 +1,21 @@
+<view class='rebateRecord'>
+  <view class='recordLine'></view>
+  <view class='recordContent' id='rebateRecord'>
+    <view class='contentItem' wx:for="{{list}}" wx:key="{{index}}">
+      <view class='itemTop clearfix'>
+        <view class='topTitle fl'>{{item.title}}</view>
+        <view class='topPrice fr'>+{{item.amount}}国美币</view>
+      </view>
+      <view class='itemMiddle'>{{item.rebateType==0?'您分享的活动被点击了':(item.rebateType==1?'您已观看完视频':'您参与完成了调研问卷')}}</view>
+      <view class='itemBottom'>
+        {{item.time}}
+      </view>
+    </view>
+  </view>
+</view>
+<view class='loadingFail-content' hidden='{{showFail?true:(list.length==0?false:true)}}'>
+  <view class='loadingFail-box'>
+    <view class='imagebox'><image src="../../../images/loading_fail.png"></image></view>
+    <view class='title'>暂无活动记录</view>
+  </view>
+</view>

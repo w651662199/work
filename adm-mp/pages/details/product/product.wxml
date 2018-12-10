@@ -1,0 +1,53 @@
+<!--pages/details/product/product.wxml-->
+<import src="../../../components/rebate/rebate.wxml"/>
+<view class='outPage {{rebateRule.showRule?"overflowHidden":""}}'>
+  <view class='detail-list' hidden='{{showLoadingFail}}'>
+    <view class='product-detail'>
+      <navigator url='../../../common/toWebPage/toWebPage?url=https://item.m.gome.com.cn/product-{{items.productId}}-{{items.skuId}}.html' hover-class="none">
+        <view class='proudct-img'>
+          <image src='{{items.image}}' mode='widthFix' class='lazy-load'></image>
+        </view>
+        <view class='product-title-box clearfix'>
+            <text class='product-title'>{{items.title}}</text>
+            <text class='product-price'>￥{{price}} | 查看详情</text>
+        </view>
+      </navigator>
+      <view class='shareBox'>
+        <template is="rebate" data="{{...rebateData}}"></template>
+      </view>
+      <navigator url='../../../common/toWebPage/toWebPage?url=https://item.m.gome.com.cn/product-{{items.productId}}-{{items.skuId}}.html' hover-class="none" class='product-desc-box'>
+        <view class='product-desc'>
+            {{items.description}}	
+        </view>
+        <view class='product-count clearfix'>
+          <view class='collect clearfix'>
+            <image src='../../../images/comment.png'></image>
+            <text wx:if="{{items.commentQuantity > 0}}">{{items.commentQuantity}}</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <!--你可能喜欢  -->
+    <view class='product-others' wx:if='{{items.items.length > 0}}'>
+      <view class='title'>你可能还喜欢</view>
+      <view class='product-others-list' >
+        <navigator class='list-item' wx:for='{{items.items}}'  wx:for-item="listItem" wx:key="{{index}}" url='../../../common/toWebPage/toWebPage?url=https://item.m.gome.com.cn/product-{{listItem.productId}}-{{listItem.itemId}}.html' hover-class="none">
+        <image src='{{listItem.image}}' mode='widthFix' class='lazy-load'></image>
+        <view class='item-price'>￥{{listItem.price}}</view>
+        </navigator>
+      </view>
+    </view>
+    <!--价格以商品详情页为准  -->
+    <view class='detail_footer'>
+      价格以商品详情页为准
+    </view>
+    <!--回到首页  -->
+    <view class="goHome" bindtap='goHome' wx:if="{{options.sourceType == '2'}}">
+      <image src='../../../images/go-home.png' mode='widthFix'></image>
+    </view>
+    <component-tools query="{{options}}" rebate="{{rebateData}}" item="{{items}}" userId="{{userId}}" bind:showShareCover="showShareCover"></component-tools>
+  </view>
+  <component-loadingFail wx:if='{{showLoadingFail}}' bind:reload='_reload' ></component-loadingFail>
+</view>
+<component-cover wx:if="{{isShowShareCover}}" shareRebateBid="{{rebateData.shareRebateBid}}" bind:hideShareCover="hideShareCover"></component-cover>
+

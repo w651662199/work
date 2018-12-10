@@ -1,0 +1,60 @@
+<!-- <import src="/components/tabBar/tabBar.wxml" /> -->
+<view class='user' hidden='{{showUser}}'>
+  <!-- username -->
+  <view class='userName'>
+    <view class='headerImage'>
+      <image src='../../images/profile-user-2x.png' wx:if="{{userId==''}}"></image>
+      <image src='{{avatar}}' wx:else></image>
+    </view>
+    <view wx:if="{{userId==''}}" class='loginBtn' bindtap='logins'>立即登录</view>
+    <view class='loginUser' wx:else>
+      <view class='name'>{{nickname}}</view>
+      <view class='state border-1px' wx:if="{{status==0||status==2}}" bindtap='authenticationTip'>待认证</view>
+      <view class='certification state border-1px' wx:elif="{{status==1}}" bindtap='authenticationTip'>认证中</view>
+      <view class='company' wx:elif="{{companyName!=''&&status==3}}">
+        <image src='../../images/profile-verify.png'></image>
+        <view>{{companyName}}</view>
+      </view>
+    </view>
+  </view>
+  <!--account  -->
+  <view class='userAccount' bindtap='money'>
+    <view class='userAccountFl'>
+      <view class='profit'>
+        <image src='../../images/redpacket@2x.png'></image>
+        <text>红包金额</text>
+      </view>
+      <view class='moneyNumber'>
+        <view class='noLogin' wx:if="{{userId==''}}">
+          <text></text>
+          <text></text>
+        </view>
+        <view class='LoginNumber' wx:else>
+          <text>{{account}}</text>
+        </view>
+      </view>
+    </view>
+    <view>
+      <image class='arrow' src='../../images/profile-arrow-2x.png'></image>
+    </view>
+  </view>
+  <!--news  -->
+  <view class='userNews'>
+    <view bindtap='news' class='contentItem' bindtap='news'>
+      <view class='left'>消息</view>
+      <view class='newsFr'>
+        <view class='newsTip' wx:if='{{messageCount!=0}}'><text>{{messageCount}}</text></view>
+        <view class='arrow'><image src='../../images/profile-arrow-2x.png'></image></view>
+      </view>
+    </view>
+    <view bindtap='rule' class='contentItem' bindtap='release'>
+      <view class='left'>我的发布</view>
+      <view class='arrow'><image src='../../images/profile-arrow-2x.png'></image></view>
+    </view>
+    <view bindtap='release' class='contentItem' bindtap='getRules'>
+      <view class='left'>赚钱规则</view>
+      <view class='arrow'><image src='../../images/profile-arrow-2x.png'></image></view>
+    </view>
+  </view>
+<!-- <template is="tabBar" data="{{tabBar}}"/> -->
+</view>

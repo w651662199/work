@@ -1,0 +1,57 @@
+<view class='surveyHeader'>
+  <view class='headerTitle'>{{surveyData.name}}</view>
+  <view class='headerDes'>{{surveyData.description}}</view>
+</view>
+<view class='surveyContent'>
+  <!-- radio -->
+  <form bindsubmit="formSubmit">
+    <block wx:for="{{surveyData.questions}}" wx:key="{{index}}" wx:for-index="itemIndex">
+      <view class='contentRadio' wx:if="{{item.type==1}}">
+        <view class='radioTitle'><text class='sequence'>{{item.sequence}}.</text>{{item.name}}<text style="color: #EA5C5E;" hidden='{{item.isAnswerRequired==0}}'>(必答)</text></view>
+        <view class='radioItem'>
+          <radio-group class="radio-group" name="{{item.surveyQuestionId}}">
+            <view class="radio" wx:for="{{item.options}}" wx:for-item="radioItem" wx:key="{{index}}">
+              <label>
+                <radio value="{{radioItem.surveyQuestionOptionId}}"/>{{radioItem.title}}
+              </label>
+            </view>
+          </radio-group>
+        </view>
+      </view>
+      <!--checkbox  -->
+      <view class='contentCheckbox' wx:if="{{item.type==2}}">
+        <view class='checkboxTitle'><text class='sequence'>{{item.sequence}}.</text>{{item.name}}<text style="color: #EA5C5E;" hidden='{{item.isAnswerRequired==0}}'>(必答)</text></view>
+        <view class='checkboxItem'>
+          <checkbox-group name="{{item.surveyQuestionId}}">
+            <view class='checkbox' wx:for="{{item.options}}" wx:for-item="checkboxItem" wx:key="{{index}}">
+              <label>
+                <checkbox value="{{checkboxItem.surveyQuestionOptionId}}"/>{{checkboxItem.title}}
+              </label>
+            </view>
+          </checkbox-group>
+        </view>
+      </view>
+      <!--grade  -->
+      <view class='contentGrade' wx:if="{{item.type==3}}">
+        <view class='gradeTitle'><text class='sequence'>{{item.sequence}}.</text>{{item.name}}<text style="color: #EA5C5E;" hidden='{{item.isAnswerRequired==0}}'>(必答)</text></view>
+        <view class='gradeItem clearfix'>
+          <view wx:for="{{10}}" wx:key="{{index}}" wx:for-item="gradeItem" wx:for-index="index" bindtap='gradeClick' data-index="{{index}}" data-itemIndex="{{itemIndex}}">
+            <image src="{{index>item.gradeIndex?'../../../images/grade.png':'../../../images/grade-selected.png'}}"></image>
+          </view>
+           <textarea hidden name='{{item.surveyQuestionId}}' value="{{item.gradeIndex+1}}"/> 
+        </view>
+      </view>
+      <!--advise  -->
+      <view class='contentAdvise' wx:if="{{item.type==4}}">
+        <view class='AdviseTitle'><text class='sequence'>{{item.sequence}}.</text>{{item.name}}<text style="color: #EA5C5E;" hidden='{{item.isAnswerRequired==0}}'>(必答)</text></view>
+        <view class='adviseItem'>
+          <textarea adjust-position name='{{item.surveyQuestionId}}'/>
+        </view>
+      </view>
+    </block>
+    <!--submit  -->
+    <view class='contentSubmit'>
+        <button class='submit' formType="submit">提交</button>
+    </view>
+  </form>
+</view>

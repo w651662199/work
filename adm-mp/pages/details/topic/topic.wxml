@@ -1,0 +1,52 @@
+<import src="../../../components/rebate/rebate.wxml"/>
+<view class='outPage {{rebateRule.showRule?"overflowHidden":""}}'>
+  <view class='topicDetail' hidden='{{showLoadingFail}}'>
+    <image class='header_image lazy-load' src='{{data.image}}' mode='widthFix'></image>
+    <!--  -->
+    <view class='detailContent'>
+      <view class='content-title'>{{data.topic.name}}</view>
+      <!--share  -->
+      <template is="rebate" data="{{...rebateData}}"></template>
+      <!--content  -->
+      <view class='tpc-main'>
+        <block wx:for="{{data.topic.components}}" wx:key="{{index}}">
+          <view class="tpc-para" wx:if="{{item.type=='text'}}">
+            {{item.text}}
+          </view>
+          <block wx:if="{{item.type=='image'}}">
+            <view class="tpc-img-box">
+                <navigator wx:if="{{item.scheme != undefined}}" url='../../../common/toWebPage/toWebPage?url={{item.scheme}}' hover-class="none" class="tpc-good-zone clearfix">
+                  <image src="{{item.url}}" mode='widthFix' class='lazy-load'></image>
+                </navigator>
+                <image wx:if="{{item.scheme == undefined}}" src="{{item.url}}" mode='widthFix' class='lazy-load'></image>
+            </view>
+            <view class="tpc-para">{{item.text}}</view>
+          </block>
+          <view class="video-box videoContainer" wx:if="{{item.type=='video'}}">
+            <video style='width:100%;' controls poster="{{item.coverImage}}" src='{{item.url}}'></video>
+          </view>
+          <view class='item-box' wx:if="{{item.type=='item'}}">
+              <navigator url='../../../common/toWebPage/toWebPage?url=https://item.m.gome.com.cn/product-{{item.outProductId}}-{{item.skuId}}.html' hover-class="none" class="tpc-good-zone clearfix">
+                <image class='tpc-gd-img lazy-load' src='{{item.item.mainImage}}'></image>
+                <view class="tpc-fig">
+                  <text class="tpc-gd-title">{{item.item.name}}</text>
+                  <view class="tpc-price" style="color: #f66a6b"><text style='font-size:40rpx;'>¥ {{item.item.salePrice/100}}</text></view>
+                </view>
+              </navigator>
+          </view>
+        </block>
+      </view>
+      <view class='author-box'>
+        <image src='{{data.topic.user.facePicUrl}}'></image>
+        <text>{{data.topic.user.nickname}}</text>
+      </view>
+    </view>
+    <!--回到首页  -->
+    <view class="goHome" bindtap='goHome' wx:if="{{options.sourceType == '2'}}">
+      <image src='../../../images/go-home.png' mode='widthFix'></image>
+    </view>
+    <component-tools query="{{options}}" rebate="{{rebateData}}" item="{{data}}" userId="{{userId}}" bind:showShareCover="showShareCover"></component-tools>
+  </view>
+  <component-loadingFail wx:if='{{showLoadingFail}}' bind:reload='_reload' ></component-loadingFail>
+</view>
+<component-cover wx:if="{{isShowShareCover}}" shareRebateBid="{{rebateData.shareRebateBid}}" bind:hideShareCover="hideShareCover"></component-cover>

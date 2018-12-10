@@ -1,0 +1,9 @@
+<!--components/loadingFail/loadingFail.wxml-->
+<view class='loadingFail-content'>
+  <view class='loadingFail-box'>
+    <view class='imagebox'><image src="../../images/loading_fail.png" mode='widthFix'></image></view>
+    <view class='title'>加载失败</view>
+    <view class='desc'>请检查网络或重试</view>
+    <button class='reload' bindtap='reload'>重新加载</button>
+  </view>
+</view>

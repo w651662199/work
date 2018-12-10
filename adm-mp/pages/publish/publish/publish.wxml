@@ -1,0 +1,65 @@
+<view class="publish">
+  <view class="content-box">
+    <view class="con-text">
+      <textarea class="text-area" value="{{formData.content}}" bindblur="textareaBlur" bindinput="textareaInput" placeholder="正文" placeholder-style="color:#ccc;" maxlength="10000"></textarea>
+    </view>
+    <view class="con-img">
+      <view class="img-item" wx:for="{{selectImages}}" wx:key="{{item}}">
+        <icon type="clear" size="40rpx" color="#E82C2C" data-i="{{index}}" bindtap="deleteImg"></icon>
+        <image class="context-img" src="{{item}}" mode="aspectFit" lazy-load="true" data-url="{{item}}" bindtap="previewImg"></image>
+      </view>
+      <view class="img-item" bindtap="chooseImg" wx:if="{{selectImages.length < 9}}">
+        <image src="/images/publish_img.png"></image>
+      </view>
+    </view>
+    <view class="tag-con">
+      <view class="con-title">标签</view>
+      <view class="tag-list">
+        <view class="tag-item {{item.isActived ? 'actived' : ''}}" wx:for="{{tagList}}" wx:key="{{index}}" data-text="{{item.text}}" data-i="{{index}}" bindtap="selectTag">
+          <text>{{item.text}}</text>
+          <image wx:if="{{item.isCustom}}" src="/images/close.png" data-t="{{item.text}}" data-i="{{index}}" capture-catch:tap="deleteTag"></image>
+        </view>
+        <view class="add-tag" bindtap="triggerTagModal"><image class="tag-icon" src="/images/publish_tag.png"></image><text>新标签</text></view>
+      </view>
+    </view>
+    <view class="pos-con" bindtap="openMap">
+      <view class="pos-title">我的位置</view>
+      <view class="pos-text">{{formData.poiName}}</view>
+      <image class="arrow-right" src="/images/arrow.png"></image>
+    </view>
+    <view class="pub-con">
+      <view class="pub-btn {{formData.content == '' && selectImages.length == 0 ? 'no-action' : ''}}" bindtap="submit">发布</view>
+    </view>
+  </view>
+</view>
+<view class="modal-cover" wx:if="{{isShowSetModal}}">
+  <view class="modal-con">
+    <view class="title">提示</view>
+    <view class="content">请允许获取定位信息~</view>
+    <view class="action">
+        <view class="cancel" bindtap="modalCancel">取消</view>
+        <view class="confirm">
+          去设置
+          <button open-type="openSetting" bindopensetting="openSetCb"></button>
+        </view>
+      </view>
+  </view>
+</view>
+<view class="modal-cover" wx:if="{{isShowTagModal}}">
+  <view class="modal-con">
+    <view class="title">添加标签</view>
+    <view class="content">标签最多10个字~</view>
+    <form bindsubmit="formTagSubmit">
+      <view class="input">
+        <input placeholder="输入标签" placeholder-style="color:#cbcbcb" name="tag" type="text" maxlength="10" bindinput="tagInput"/>
+      </view>
+      <view class="action">
+        <view class="cancel" bindtap="triggerTagModal">取消</view>
+        <view class="confirm">
+          添加
+          <button formType="submit"></button>
+        </view>
+      </view>
+    </form>
+  </view>
+</view>

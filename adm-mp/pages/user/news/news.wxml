@@ -1,0 +1,18 @@
+<view class='news'>
+  <view class='newsLine'></view>
+  <view class='newsContent' id='news'>
+    <view class='contentItem' wx:for="{{list}}" wx:key="{{index}}" data-id='{{item.dataId}}' bindtap='toDetails'>
+      <view class='itemTop clearfix'>
+        <view class='rebateCount fl'>{{item.type}}</view>
+        <view class='time fr'>{{item.time}}</view>
+      </view>
+      <view class='itemMiddle'>{{item.message}}</view>
+    </view>
+  </view>
+</view>
+<view class='loadingFail-content' hidden='{{showFail?true:(list.length==0?false:true)}}'>
+  <view class='loadingFail-box'>
+    <view class='imagebox'><image src="../../../images/loading_fail.png"></image></view>
+    <view class='title'>暂无消息</view>
+  </view>
+</view>

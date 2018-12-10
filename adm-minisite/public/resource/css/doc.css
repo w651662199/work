@@ -1,0 +1,27 @@
+body,div,dl,dd,dt,p{margin: 0;padding: 0;font-family: "Helvetica Neue",Helvetica,STHeiTi,Arial,sans-serif;}
+.doc-main{
+	padding: 0.66rem 0.4rem;
+	font-size: 32px;
+	color: #4e4e4e;
+}
+[data-dpr="1"] .doc-main{font-size: 16px}
+[data-dpr="3"] .doc-main{font-size: 48px}
+.main-dl dd{
+	line-height: 1.5;
+	padding-left: 1.5em;
+	text-indent: -1.5em;
+	padding-bottom:0.3rem;
+	letter-spacing: 1px;
+}
+dd.dd-question{color: #323232;font-weight: bold;}
+dd span{width: 0.44rem;height: 0.44rem;margin-top:-4px;border-radius: 0.026rem;font-weight: normal; line-height: 1.2;text-indent: 0;text-align: center; color: #fff;display: inline-block; vertical-align: middle;margin-right: 0.16rem}
+/* [data-dpr="1"] dd span{width: 20px;height: 20px;}
+[data-dpr="3"] dd span{width: 52px;height: 52px;} */
+dd.dd-question span{background: #ff5c5c;}
+dd.dd-answer span{background: #43d082;}
+dd.dd-answer-list{padding-left: 1.5rem;}
+p{text-align: center;padding: 20px 0;}
+p span{color: #ff5b5a}
+
+.doc-main.rebate-text p{text-align: left;}
+.doc-main.rebate-text p.no-padding{padding-top: 0;}

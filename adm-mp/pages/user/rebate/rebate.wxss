@@ -1,0 +1,112 @@
+/* pages/user/rebate/rebate.wxss */
+.rebate {
+  height: 100%;
+  width: 100%;
+  background: #f3f5f7;
+}
+.rebateTop {
+  height: 202rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+  padding: 30rpx;
+  position: relative;
+}
+.bigShareFont {
+  color: #999999;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+.smallShareFont {
+  color: #999999;
+  font-size: 24rpx;
+  line-height: 34rpx;
+}
+.btn {
+  position: absolute;
+  right: 30rpx;
+  top: 58rpx;
+  width: 120rpx;
+  height: 60rpx;
+  border: 1rpx solid #E82C2C;
+  border-radius: 8rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #E82C2C;
+  text-align: center;
+}
+.profit {
+  font-size: 58rpx;
+  color: #E65050;
+}
+.coin {
+  display: inline-block;
+  width: 140rpx;
+  height: 40rpx;
+}
+.detailed {
+  display: inline-block;
+  height: 40rpx;
+  margin-top: 18rpx;
+}
+.rebateRecord {
+  height: 60rpx;
+  font-size: 34rpx;
+  color: #333333;
+  background: #fff;
+  padding-top: 24rpx;
+  padding-left: 31rpx;
+}
+.rebateList {
+  width: 100%;
+}
+.rebateItem {
+  height: 194rpx;
+  padding: 30rpx 14rpx 0rpx 30rpx;
+  background: #fff;
+  position: relative;
+}
+.line {
+  height: 1rpx;
+  background: rgba(221,221,221,0.50);
+  position: absolute;
+  bottom: 0;
+  width: 706rpx;
+}
+.money {
+  font-size: 32rpx;
+  color: #E82C2C;
+  display: block;
+  line-height: 44rpx;
+  margin-bottom: 10rpx;
+}
+.explain {
+  display: inline-block;
+  color: #666666;
+  margin-bottom: 12rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.tagging {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 16rpx;
+}
+.more {
+  height: 90rpx;
+  background: #fff;
+  line-height: 90rpx;
+  text-align: center;
+  color: #E82C2C;
+  font-size: 28rpx;
+}
+.noList {
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 28rpx;
+  color: #999999;
+}

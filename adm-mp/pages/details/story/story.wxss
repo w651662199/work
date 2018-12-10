@@ -1,0 +1,31 @@
+@import "../../../components/rebate/rebate.wxss";
+@import "../topic/topic.wxss";
+.webpage-detail-title {
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 30rpx;
+}
+.webpage-detail-title .top {
+  display: block;
+  margin: 30rpx 0 0 16rpx;
+  font-size: 48rpx;
+  color: #333;
+}
+.webpage-template .tpc-main .tpc-para:nth-of-type(1) {
+    border: none;
+    padding-top: 0;
+}
+.webpage-template .author_box text{
+    color: #666;
+    margin: 30rpx 0 0 0;
+}
+.goHome{
+  position:fixed;
+  bottom:180rpx;
+  right:20rpx;
+  height: 80rpx;
+  width: 80rpx;
+}
+.goHome image{
+  width: 100%;
+}

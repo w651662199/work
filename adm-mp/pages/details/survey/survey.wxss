@@ -1,0 +1,113 @@
+radio, checkbox{ 
+   transform:scale(.7); 
+}
+.surveyHeader {
+  padding: 0 22rpx;
+}
+.surveyHeader .headerTitle {
+  padding: 40rpx 0 30rpx 0;
+  text-align: center;
+  font-size: 42rpx;
+  color: #333;
+}
+.surveyHeader .headerDes{
+  line-height: 48rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+.surveyContent {
+  padding: 0 22rpx;
+  margin-top: 50rpx;
+}
+.contentRadio{
+  font-size: 36rpx;
+  color: #333;
+}
+.contentRadio .radioTitle{
+  padding-bottom: 20rpx;
+}
+.contentRadio .sequence {
+  margin-right: 10rpx;
+}
+.contentRadio .radioItem .radio{
+  padding: 20rpx 43rpx;
+  font-size: 28rpx;
+}
+.contentRadio .radioItem .radio:first-child {
+  padding-bottom: 4rpx;
+}
+.contentCheckbox {
+  font-size: 36rpx;
+  color: #333;
+  margin-top: 30rpx;
+}
+.contentCheckbox .sequence {
+  margin-right: 10rpx;
+}
+.contentCheckbox .checkboxItem .checkbox {
+  padding: 24rpx 0 24rpx 43rpx;
+  font-size: 28rpx;
+}
+.contentCheckbox .checkboxItem .checkbox:first-child {
+  margin-top: 16rpx;
+}
+.contentGrade {
+  font-size: 36rpx;
+  color: #333;
+}
+.contentGrade .sequence {
+  margin-right: 10rpx;
+}
+.contentGrade .gradeItem {
+  padding: 40rpx 0 50rpx 43rpx;
+}
+.contentGrade .gradeItem view {
+  float: left;
+  margin-right: 20rpx;
+  width: 34rpx;
+  height: 30rpx;
+}
+.contentGrade .gradeItem view image {
+  width: 34rpx;
+  height: 30rpx;
+  vertical-align: top;
+}
+.contentAdvise {
+  font-size: 36rpx;
+  color: #333;
+}
+.contentAdvise .sequence {
+  margin-right: 10rpx;
+}
+.adviseItem {
+  padding: 40rpx 0 50rpx 43rpx;
+}
+.adviseItem textarea {
+  width: 597rpx;
+  height: 195rpx;
+  color: #666;
+  padding: 18rpx;
+  cursor: pointer;
+  border: 1px solid #999;
+}
+.contentSubmit {
+  padding: 50rpx 22rpx 24rpx 22rpx;
+  text-align: center;
+}
+.contentSubmit .submit {
+  display: inline-block;
+  width:422rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff;
+  background: #f20c59;
+  border-radius: 88rpx;
+  vertical-align: top;
+}
+.checkboxTitle, .gradeTitle, .radioTitle, .AdviseTitle{
+  margin-top: 20rpx;
+  text-indent: -1em;
+  padding-left: 36rpx;
+}

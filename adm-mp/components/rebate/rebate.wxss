@@ -1,0 +1,60 @@
+.share_tips {
+  margin: 14rpx 0 0 0;
+  display: inline-block;
+  vertical-align: top;
+}
+.share_tips .share {
+  color: #ff3a64;
+  background: url('https://mevent.meixincdn.com/mm/image/tag_red_2x.png') no-repeat;
+  background-size: 100% 100%;
+}
+.share_tips .question {
+  color: #ffa229;
+  background: url('https://mevent.meixincdn.com/mm/image/tag_yellow_2x.png') no-repeat;
+  background-size: 100% 100%;
+}
+.share_tips .video {
+  color: #a07aff;
+  background: url('https://mevent.meixincdn.com/mm/image/tag_purple_2x.png') no-repeat;
+  background-size: 100% 100%;
+}
+.share_tips view,.share_tips .rebate-btn {
+  padding: 4rpx 10rpx 4rpx 22rpx;
+  margin-right: 16rpx;
+  font-size: 24rpx;
+}
+.share_tips .rebate-btn {
+  color: #999;
+  padding-left: 0;
+  position: relative;
+}
+.share_tips .rebate-btn text{
+  border-bottom: 1px solid #999;
+  margin-left: 28rpx;
+}
+.share_tips image {
+  width: 20rpx;
+  height: 20rpx;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  margin-top: -10rpx;
+}
+.share_tips .video{
+  color: #a07aff;
+  background: url('https://mevent.meixincdn.com/mm/image/tag_purple_2x.png') no-repeat;
+  background-size: 100% 100%;
+}
+.rebareModal {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  width:100%;
+  height: 100%;
+  background: #000;
+  opacity: 0;
+  -webkit-transition: all .5s ease-out;
+  -moz-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}

@@ -1,0 +1,53 @@
+<view class='loginBox'>
+  <view class='loginBar'>
+    <view class='{{selectIndex === 0 ? "selectedNav":""}} navbar' bindtap='selectedNavBar' data-selectIndex="0">
+      验证码登录/注册
+      <view class='line'></view>
+    </view>
+    <view class='{{selectIndex === 1 ? "selectedNav":""}} navbar' bindtap='selectedNavBar' data-selectIndex="1">
+      密码登录
+      <view class='line'></view>
+    </view>
+  </view>
+  <view class="content">
+    <view wx:if="{{selectIndex == '0'}}">
+      <form bindsubmit="formSubmitReg">
+        <view class="section">
+          <text class="title">手机号</text>
+          <input name="username" placeholder="请输入手机号" class="input" type='number' 
+          placeholder-class="placeholder" value='{{form_info}}' bindinput='bindPhoneNum' />
+        </view>
+        <view class="section">
+          <text class="title">验证码</text>
+          <input name="password" placeholder="请输入验证码" class="input input-min" 
+          placeholder-class="placeholder" value='{{form_info}}' bindinput='bindCode'/>
+          <text  class='{{getCode ? "getCode":""}} code' bindtap='getCode'>{{codeText}}</text>
+        </view>
+        <button class="button" disabled='{{btnDisabled}}' formType="submit">登录</button>
+      </form>
+      <view class="tip">未注册的用户，手机登录成功将自动注册，且代表您已同意协议
+        <navigator url='../webPage/webPage?url=https://mevent.meixincdn.com/mm/platform-service.html' class='text' hover-class='none'>《国美平台服务协议》</navigator>
+        <navigator url='../webPage/webPage?url=https://mevent.meixincdn.com/mm/meifubao-service.html' class='text' hover-class='none'>《美付宝用户服务协议》</navigator>
+      </view>
+    </view>
+    <view wx:if="{{selectIndex == '1'}}">
+      <form bindsubmit="formSubmitLogin">
+        <view class="section">
+          <text class="title">手机号</text>
+          <input name="username" placeholder="请输入手机号" class="input" type='number'
+          placeholder-class="placeholder" value='{{form_info}}' bindinput='bindUserName'/>
+        </view>
+        <view class="section">
+          <text class="title">密码</text>
+          <input name="password" placeholder="请输入密码" class="input"
+           password placeholder-class="placeholder" value='{{form_info}}' bindinput='bindPassword'/>
+        </view>
+        <view class='formtip'>如忘记密码，请前往国美APP进行重置</view>
+        <button class="button" disabled='{{loginBtnDisabled}}' formType="submit">登录</button>
+      </form>
+      <view class="tip">登录即代表您已经同意
+        <navigator url='../webPage/webPage?url=https://mevent.meixincdn.com/mm/platform-service.html' class='text' hover-class='none'>《国美平台服务协议》</navigator>
+      </view>  
+    </view>
+  </view>
+</view>

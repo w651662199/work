@@ -1,0 +1,36 @@
+<view class='publishContainer'>
+  <view class='reject' hidden='{{showReject}}'>
+    <text>{{rejectReasons}}请重新提交。</text>
+  </view>
+  <view class='publishContent' style="padding-bottom:{{showShare?'148rpx':'0rpx'}}">
+    <view class='userInfo'>
+      <view class='user'>
+        <image class='userImage' wx:if="{{content.userImage!=''}}" src='{{content.userImage}}'></image>
+        <view>
+          <view class='userName' wx:if="{{content.nickName!=''}}">{{content.nickName}}</view>
+          <view class='userStatus' wx:if="{{content.isVerifiedEnp==1&&content.enpName!=''}}">
+            <image src='/images/profile-verify.png'></image>
+            <text>{{content.enpName}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='time' wx:if="{{content.publishTime!=''}}">{{content.publishTime}}</view>
+    </view>
+    <view class='title' wx:if="{{content.title!=''}}">{{content.title}}</view>
+    <view class='content' wx:if="{{content.content!=''}}">{{content.content}}</view>
+    <view class='link' bindtap='textPaste' wx:if="{{content.linkUrl!=''}}"><image class='link-icon' src='https://mevent.meixincdn.com/static/img/link_icon.png'></image>网页链接</view>
+    <view class='imgs' wx:for="{{content.contentImages}}" wx:key="{{index}}">
+      <image mode="widthFix" src='{{item}}' data-url="{{item}}" bindtap='previewImg'></image>
+    </view>
+    <view class='address' wx:if="{{content.city!=''}}" bindtap='Tomap'>
+      <image src='/images/map_location@2x.png'></image>
+      <text>{{content.city+content.number+content.poiName}}</text>
+    </view>
+    <view class='tag' wx:if="{{content.tag!=null}}">{{content.tag}}</view>
+    <view class='tag' wx:else>#原创</view>
+  </view>
+  <component-tools wx:if="{{showShare}}" contentId="{{id}}"></component-tools>
+  <view class="goHome" bindtap='goHome' wx:if="{{showHome}}">
+    <image src='/images/go-home.png' mode='widthFix'></image>
+  </view>
+</view>

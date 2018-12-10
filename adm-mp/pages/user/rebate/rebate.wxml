@@ -1,0 +1,32 @@
+<!--pages/user/rebate/rebate.wxml-->
+<view class='rebate'>
+  <view class='rebateTop'>
+    <view class='bigShareFont'>红包金额</view>
+    <view>
+      <text class='profit'>{{money?money:'0.00'}}</text>
+      <text class='bigShareFont coin'>（国美币）</text>
+    </view>
+    <view>
+      <text class='smallShareFont detailed'>红包金额包含已经提现部分，具体提现金额请以国美APP显示为主。</text>
+    </view>
+    <view class='btn' bindtap='showTip'>提现</view>
+  </view>
+  <view class='rebateList' wx:if="{{list.length>0}}">
+    <view class='rebateRecord'>红包记录</view>
+    <view class='rebateItem' wx:for="{{list}}" wx:key="{{index}}">
+      <view>
+        <text class='money'>{{item.amount}}</text>
+        <text class='bigShareFont explain'>{{item.title}}</text>
+        <view class='tagging'>
+          <text class='state smallShareFont'>{{item.desc}}</text>
+          <text class='time smallShareFont'>{{item.time}}</text>
+        </view>
+      </view>
+      <view class='line'></view>
+    </view>
+    <view class='more' wx:if="{{isMore}}">
+      <text bindtap='more'>查看更多</text>
+    </view>
+  </view>
+  <view class='noList' wx:else>暂无记录</view>
+</view>

@@ -1,0 +1,14 @@
+<!--common/toLogin/toLogin.wxml-->
+<view class='toLogin-content'>
+  <view class='toLogin-box'>
+    <view class='imagebox'><image src="../../images/tip.png" mode='widthFix'></image></view>
+    <view class='title'>安全提示</view>
+    <view class='desc'>
+      <text>为保证您的账户安全，\n请务必使用国美账号登录</text>
+    </view>
+    <button class='doLogin' bindtap='toLogin'>国美账号登录/注册</button>
+    <button class='goShare' open-type='share' wx:if="{{rebateType == 'share'}}">不参加活动，仅分享</button>
+    <button class='goShare' wx:if="{{rebateType == 'video'}}" bindtap='jumpTovideo'>不参加活动，仅观看</button>
+    <button class='goShare' wx:if="{{rebateType == 'survey'}}"  bindtap='jumpTosurvey'>不参加活动，仅答题</button>
+  </view>
+</view>

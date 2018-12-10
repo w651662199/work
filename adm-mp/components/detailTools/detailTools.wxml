@@ -1,0 +1,11 @@
+<view class="bottom">
+  <view class="bot-item survey" wx:if="{{isShowSuvery}}" bindtap="toSuvery">
+    <image src="/images/survey_icon.png"></image>
+    <view class="text">问卷</view>
+  </view>
+  <view class="bot-item share" bindtap='doShare'>
+    <image src="/images/share_icon.png"></image>
+    <view class="text">分享</view>
+    <button open-type='share' class='sharebtn' hidden="{{isRebate && cId == ''}}"></button>
+  </view>
+</view>

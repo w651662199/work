@@ -1,0 +1,48 @@
+export default {
+	anicerControl:{
+		isSucceed:false,
+		hasCompanyInfo:false,
+		step:'identity'
+	},
+	anicerFormData: {
+		/*contactName: "",
+		contactGender: 0,
+		contactEmail: "",
+		contactMobile: "",
+		contactAddress: "",
+		type:'',
+		organization:{
+			companyName: "",
+			bizLicenseNumber: "",
+			legalReprName: "",
+			legalReprIdNumber: "",
+			legalReprIdImage: "",
+			legalReprIdBackImage: "",
+			bizLicenseAddress: "",
+			companyFoundDate: 0,
+			bizStartDate: 0,
+			bizEndDate: 0,
+			regCapital: "",
+			bizScope: "",
+			bizLicenseImage: "",
+			companyAddress: "",
+			companyPhone: "",
+			emerContact: "",
+			emerContactPhone: "",
+			companyEmail: "",
+			orgCode: "",
+			orgCodeImage: "",
+			taxNumber: "",
+			taxpayerType: 1,
+			taxCode: "",
+			taxRegCertImage: "",
+			taxpayerQualificationImage: "",
+			bankAccountName: "",
+			bankAccount: "",
+			bankBranchName: "",
+			bankBranchLineNumber: "",
+			bankBranchAddress: "",
+			bankAccountPermissionImage: "",
+		}*/
+	}
+};

@@ -1,0 +1,46 @@
+<import src="../../../components/rebate/rebate.wxml"/>
+<view class='outPage {{rebateRule.showRule?"overflowHidden":""}}'>
+  <view class='topicDetail' hidden='{{showLoadingFail}}'>
+    <view class='detailContent webpage-template'>
+      <!--title  -->
+      <view class="webpage-detail-title">
+        <view class='top'>{{data.title}}</view>
+        <template is="rebate" data="{{...rebateData}}"></template>
+      </view>
+      <!--content  -->
+      <view class='tpc-main' wx:for="{{data.webpageItems}}" wx:key="{{index}}">
+        <view class="tpc-para" wx:if="{{item.type=='rich_text'}}">
+          <text>
+            {{item.words}}
+          </text>
+        </view>
+        <view class="tpc-img-box" wx:if="{{item.type=='image'}}">
+            <image src='{{item.image}}' mode='widthFix' class='lazy-load'></image>
+        </view>
+        <view class="video-box videoContainer" wx:if="{{item.type=='video'}}">
+          <video style='width:100%;' controls poster="{{item.image}}"  src='{{item.videoSrc}}'></video>
+        </view>
+        <view class='item-box' wx:if="{{item.type=='product'}}">
+            <navigator url='../../../common/toWebPage/toWebPage?url=https://item.m.gome.com.cn/product-{{item.productId}}-{{item.skuId}}.html' hover-class="none" class="tpc-good-zone clearfix">
+              <image class='tpc-gd-img lazy-load' src='{{item.image}}'></image>
+              <view class="tpc-fig">
+                <text class="tpc-gd-title">{{item.name}}</text>
+                <view class="tpc-price" style="color: #f66a6b"><text style='font-size:40rpx;'>¥ {{item.price}}</text></view>
+              </view>
+            </navigator>
+        </view>
+      </view>
+      <view class='author-box'>
+        <image src='{{data.platformAvatar}}'></image> 
+        <text>{{data.platformNickname}}</text>
+      </view>
+    </view>
+    <!--回到首页  -->
+    <view class="goHome" bindtap='goHome' wx:if="{{options.sourceType == '2'}}">
+      <image src='../../../images/go-home.png' mode='widthFix'></image>
+    </view>
+    <component-tools query="{{options}}" rebate="{{rebateData}}" item="{{data}}" userId="{{userId}}" bind:showShareCover="showShareCover"></component-tools>
+  </view>
+  <component-loadingFail wx:if='{{showLoadingFail}}' bind:reload='_reload' ></component-loadingFail>
+</view>
+<component-cover wx:if="{{isShowShareCover}}" shareRebateBid="{{rebateData.shareRebateBid}}" bind:hideShareCover="hideShareCover"></component-cover>

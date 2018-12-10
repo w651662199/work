@@ -1,0 +1,43 @@
+page {
+  background: #fff;
+}
+.con {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.con .finish-icon {
+  width: 303rpx;
+  height: 265rpx;
+}
+.con .finish-icon image{
+  width: 303rpx;
+  height: 265rpx;
+}
+.con .msg {
+  color: #666;
+  font-size: 36rpx;
+  margin: 20rpx 0;
+}
+.con .btn {
+  width: 430rpx;
+  height: 90rpx;
+  box-sizing: border-box;
+  border-radius: 90rpx;
+  font-size: 32rpx;
+  line-height: 90rpx;
+  margin: 20rpx 0;
+}
+.con .btn.btn-confirm {
+  background: #E82C2C;
+  border: 1rpx solid #E82C2C;
+  color: #fff;
+}
+.con .btn.btn-cancel {
+  background: #fff;
+  border: 1px solid #666;
+  color: #666;
+}

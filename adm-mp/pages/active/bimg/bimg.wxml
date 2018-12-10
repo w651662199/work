@@ -1,0 +1,8 @@
+<!--pages/active/bimg/bimg.wxml-->
+<view class='page-con'>
+  <image src='https://mevent.meixincdn.com/static/img/bag/bag_save.jpg'></image>
+  <view class='save-btn' bindtap='saveImg'>
+    <image src='https://mevent.meixincdn.com/static/img/bag/bag_btn_save.png'></image>
+  </view>
+  <view class='empty-con'></view>
+</view>

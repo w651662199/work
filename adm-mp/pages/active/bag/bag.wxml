@@ -1,0 +1,81 @@
+<!--pages/active/bag/bag.wxml-->
+<view class='page-con'>
+  <view class='page-logo'>
+    <image src='https://mevent.meixincdn.com/static/img/bag/bag_logo.png'></image>
+  </view>
+  <view class='parent-info' wx:if="{{parentOpenId != ''}}">
+    <image class='p-avatar' src='{{parentAvatar}}'></image>
+    <text class='p-name p-text'>{{parentName}}</text><text class='p-text'>,送你一个福袋：</text>
+  </view>
+  <view class='bag-con'>
+    <view class="bag-get-btn" bindtap='getBag'>
+      <image wx:if="{{isGetBag}}" src='https://mevent.meixincdn.com/static/img/bag/bag_btn_open.png'></image>
+      <image wx:if="{{!isGetBag}}" src='https://mevent.meixincdn.com/static/img/bag/bag_btn_close.png'></image>
+      <button class='action-btn' wx:if="{{canIUse && !isAuth && !isGetBag}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"></button>
+    </view>
+  </view>
+  <view class='btn-con'>
+    <view class='btn btn-share' bindtap='shareBag'>
+      <view class='style-btn'>
+        <image src='https://mevent.meixincdn.com/static/img/bag/bag_btn_share.png'></image>
+      </view>
+      <button class='action-btn' open-type='share' wx:if="{{userId != '' && isAuth}}"></button>
+      <button class='action-btn' wx:if="{{canIUse && !isAuth}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"></button>
+    </view>
+    <view class='btn btn-create' bindtap='goSaveImg'>
+      <view class='style-btn'>
+        <image src='https://mevent.meixincdn.com/static/img/bag/bag_btn_create.png'></image> 
+      </view>
+      <button class='action-btn' wx:if="{{canIUse && !isAuth}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"></button>
+    </view>
+  </view>
+  <view class='list-con bg-con'>
+    <view class='text-con'>
+      <view class='title'>
+        —<view class='title-msg'>已获福袋</view>—
+      </view>
+      <view class='desc-msg'>已有<text class='desc-num'>{{isGetBag ? totalCount - 1 : totalCount}}名</text>朋友领取福袋，你也获得<text class='desc-num'>{{isGetBag ? totalCount - 1 : totalCount}}</text>个</view>
+      <view class='desc-msg' wx:if="{{bagList.length == 0}}">快去免费送福袋吧</view>
+    </view>
+    <view class='item-list'>
+      <view wx:for="{{bagList}}" class='item' wx:key="{{item.id}}">
+        <image src='{{item.wxUserDTO.avatar}}'></image>
+        <view class='user-info'>
+          <view class='user-name' wx:if="{{item.isRebate == 1}}">{{item.wxUserDTO.nickname}}</view>
+          <view class='text' wx:if="{{item.isRebate == 1}}">, 回赠你</view>
+          <view class='text' wx:else>您已获得</view>
+          <view class='bag-name' bindtap='showBagMsg' data-index="{{index}}">{{item.prizeName}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='more' wx:if="{{bagList.length < totalCount}}" bindtap='nextPage'>
+    <view class='text'>查看更多</view>
+    <view class='arrow'>
+      <image src='https://mevent.meixincdn.com/static/img/bag/arrow.png'></image>
+    </view>
+  </view>
+  <view class='active-rule bg-con'>
+    <view class='text-con'>
+      <view class='title'>
+        —<view class='title-msg'>活动规则</view>—
+      </view>
+    </view>
+    <view class='rule-list'>
+      <view class='rule-item'>
+        1.每人每天通过邀请新用户（同一手机设备、同一手机号码）最多获得10个福袋
+      </view>
+      <view class='rule-item'>
+        2.每日福袋数量有限，先到先得
+      </view>
+      <view class='rule-item'>
+        3.活动依法解释权归美媒榜所有
+      </view>
+    </view>
+  </view>
+  <view class='empty-con'></view>
+      <!--回到首页  -->
+    <view class="goHome" bindtap='goHome' wx:if="{{options.p}}">
+      <image src='/images/go-home.png' mode='widthFix'></image>
+    </view>
+</view>

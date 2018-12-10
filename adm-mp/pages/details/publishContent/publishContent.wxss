@@ -1,0 +1,130 @@
+/* pages/details/publishContent/publishContent.wxss */
+page{
+  background: #f4f5f7;
+  height: 100%;
+}
+.publishContainer {
+  border-bottom: 1px solid #eeeeee;
+}
+.publishContent {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  background: #ffffff;
+  padding-bottom: 10rpx;
+}
+.userInfo{
+  height: 120rpx;
+  padding-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.userImage{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.time{
+  color:  #666666;
+  font-size: 26rpx;
+}
+.user {
+  display: flex;
+}
+.userName{
+  font-size: 28rpx;
+  color: #333333;
+  line-height: 40rpx;
+}
+.userStatus image{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+}
+.userStatus text{
+  font-size: 26rpx;
+  color: #999999;
+}
+.title {
+  font-size: 40rpx;
+  color: #333333;
+  line-height: 60rpx;
+  margin-top: 40rpx;
+  margin-bottom: 28rpx;
+}
+.content {
+  font-size: 30rpx;
+  color: #555555;
+  line-height: 51rpx;
+  margin-bottom: 10rpx;
+}
+.link {
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  color: #315FA5;
+  line-height: 46rpx;
+  margin-bottom: 30rpx;
+}
+.link .link-icon {
+  width: 32rpx;
+  height: 32rpx;
+}
+.imgs image{
+  width: 100%;
+  height: auto;
+  margin-bottom: 30rpx;
+  border-radius: 16rpx;
+}
+.address image{
+  width: 52rpx;
+  height: 52rpx;
+  margin-left: 30rpx;
+  margin-right: 30.6rpx;
+}
+.address{
+  width: 100%;
+  height: 100rpx;
+  background: #F6F6F6;
+  border-radius: 16rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  color: #262C32; 
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.tag{
+  font-size: 30rpx;
+  color: #666666;
+  height: 122rpx;
+  line-height: 122rpx;
+}
+.reject {
+  background-color: #ffffff;
+  padding: 20rpx 20rpx 0 20rpx;
+}
+.reject text {
+  display: inline-block;
+  padding: 16rpx;
+  background: #FEFBE7;
+  border: 1rpx solid #F6E4AD;
+  font-size: 28rpx;
+  color: #666666;
+  line-height: 42rpx;
+}
+.goHome{
+  position: fixed;
+  bottom: 180rpx;
+  right: 20rpx;
+  height: 80rpx;
+  width: 80rpx;
+}
+.goHome image{
+  width: 100%;
+}
