@@ -1,0 +1,81 @@
+.error-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: @error-main-bg;
+    z-index: 1400;
+    .login-header {
+        height: 54px;
+        padding: 0px 40px;
+        background-color: #fff;
+        span {
+            overflow: hidden;
+            display: block;
+            float: left;
+            width: 144px;
+            height: 54px;
+            background-image: url(@error-login-header-bg-image);
+            background-repeat: no-repeat;
+            background-position: left top;
+            -webkit-background-size: contain;
+            background-size: contain;
+            background-position: left center;
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                text-indent: -9999px;
+            }
+        }
+    }
+    .error-body {
+        overflow: hidden;
+        .body-scaffold {
+            width:500px;
+            margin:50px auto 0;
+        }
+    }
+    .error-footer {
+       text-align: center;
+       color: @error-footer-color; 
+        .error-title {
+           font-size: 24px;
+           line-height: 50px;
+        }
+        .error-detail {
+            font-size: 14px;
+            line-height: 40px;
+        }
+        a {
+            display:inline-block;
+            line-height:32px;
+            font-size: 14px;
+            width: 96px;
+            height: 34px;
+            cursor: pointer;
+            margin:20px 13px 0;
+            color: @error-footer-a-color;
+            border: 2px solid @error-footer-a-color;
+            border-radius: 34px;
+            background: none;
+        }
+        .action-back-index {
+            color: @error-footer-back-index-color;
+            border: 2px solid @error-footer-back-index-color;
+        }
+        &.none-403, &.none-500{
+            display: none;
+        }
+    }
+}
+.error-403 {
+    .error-variant(@error-403-height, @error-403-url);
+}
+.error-404 {
+    .error-variant(@error-404-height, @error-404-url);
+}
+.error-500 {
+    .error-variant(@error-500-height, @error-500-url);
+}

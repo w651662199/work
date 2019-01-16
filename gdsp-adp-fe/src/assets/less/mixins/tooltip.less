@@ -1,0 +1,11 @@
+.tooltip-variant(@background, @a-color, @a-background, @a-hover-background, @a-hover-color) {
+    background: @background;
+    >ul>li>a {
+        color: @a-color;
+        background: @a-background;
+        &:hover {
+            color: @a-hover-color;
+            background: @a-hover-background;
+        }
+    }
+}

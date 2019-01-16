@@ -1,0 +1,105 @@
+.header {
+    position: relative;
+    background: @header-bg;
+    a {
+        font-size: @header-a-font-size;
+        color: @header-a-color;
+    }
+    &:extend(.clearfix all);
+    .header-logo {
+        float: left;
+        width: 180px;
+        height: 60px;
+        background: @header-logo-bg;
+        a {
+            display: block;
+            height: 100%;
+            width: 100%;
+            text-indent: -99999px;
+            background-image: url(@header-logo-images);
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+    .header-nav {
+        zoom: 1;
+        height: 60px;
+        overflow: hidden;
+        &:extend(.clearfix all);
+        > ul {
+            height: 60px;
+            margin-left: 50px;
+            .header-nav-item {
+                float: left;
+                margin: 0px 27px;
+                height: 60px;
+            }
+            .header-nav-item > a {
+                float: left;
+                display: block;
+                padding: 0 14px;
+                height: 60px;
+                line-height: 60px;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                &:hover {
+                    border-bottom: 4px solid @header-nav-item-hover-border-color;
+                    color: @header-nav-item-hover-color;
+                }
+            }
+            .header-nav-item.actived > a:hover, .header-nav-item.actived > a {
+                border-bottom: 4px solid @header-nav-item-hover-border-color;
+                color: @header-nav-item-hover-color;
+            }
+        }
+    }
+    .header-login {
+        position: absolute;
+        right: 80px;
+        top: 15px;
+        .login-after {
+            position: relative;
+            padding: 0px 0px 0px 20px;
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            vertical-align: middle;
+            font-size: 16px;
+            cursor: pointer;
+            border-left: 1px solid @header-login-after-border-left;
+            > span {
+                display: inline-block;
+                height: 30px;
+                vertical-align: middle;
+                line-height: 30px;
+            }
+            .icon-arrow {
+                font-size: 10px;
+                margin-left: 24px;
+            }
+            .after-face {
+                overflow: hidden;
+                margin-right: 10px;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                font-size: 0;
+                line-height: 30px;
+                -webkit-border-radius: 30px;
+                border-radius: 30px;
+                img {
+                    display: inline-block;
+                }
+            }
+            &:hover {
+                color: @header-login-after-hover-color;
+            }
+        }
+        .tooltip {
+            position: absolute;
+            right: 0;
+            left: auto;
+            top: 56px;
+        }
+    }
+}

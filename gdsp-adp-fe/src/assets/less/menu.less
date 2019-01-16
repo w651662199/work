@@ -1,0 +1,96 @@
+.menu {
+    width: 180px;
+    float: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    .menu-cpc {
+        background: #f0f3f6;
+        font-size: 16px;
+        line-height: 40px;
+        height: 40px;
+        padding-left: 40px;
+    }
+    .menu-header > a {
+        position: relative;
+        display: block;
+        padding-left: 15px;
+        height: 44px;
+        line-height: 44px;
+        font-size: 16px;
+        color: @menu-header-color;
+        &:hover {
+            background: @menu-header-hover-bg;
+        }
+        .icon {
+            margin-right: 8px;
+            color: @menu-header-icon-color;
+        }
+        .icon-arrow {
+            overflow: hidden;
+            position: absolute;
+            right: 10px;
+            margin-right: 0;
+            height: 44px;
+            line-height: 44px;
+            color: @menu-header-icon-arrow-color;
+            font-size: 10px;
+        }
+        .header-text {
+            font-size: 16px;
+            display: inline-block;
+            vertical-align: middle; 
+        }
+        &:hover, &:hover .icon {
+            color: @menu-header-hover-color;
+        }
+        &:hover .icon-arrow {
+            color: @menu-header-hover-icon-arrow-color;
+        }
+    }
+    .menu-second {
+        display: none;
+        > a {
+            overflow: hidden;
+            padding: 4px 25px 4px 39px;
+            display: block;
+            font-size: 14px;
+            line-height: 20px;
+            color: @menu-second-color;
+            &:hover {
+                color: @menu-second-hover-color;
+                background: @menu-second-hover-bg;
+            }
+            &.actived, &.actived:hover {
+                color: @menu-second-actived-hover-color;
+                background: @menu-second-actived-hover-bg; 
+            }
+        }
+    }
+    ul > li.actived {
+        .menu-header > a:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 4px;
+            height: 18px;
+            margin-top: -8px;
+            background: @menu-li-actived-header-a-before-bg;
+        }
+        .menu-header .icon {
+            color: @menu-li-actived-header-icon-color; 
+        }
+        .menu-header .icon-arrow {
+            color: @menu-li-actived-header-icon-arrow-color;
+            &:before {
+                content: '\e908';
+            } 
+        }
+        .menu-header .header-text {
+            color: @menu-li-actived-header-text-color;
+        }
+        .menu-second {
+            display: block;
+        }
+    }
+}

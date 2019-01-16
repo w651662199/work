@@ -1,0 +1,47 @@
+//宽度
+.element-width(@n, @i: 10) when (@i =< @n) {
+    .w@{i} {
+        width: unit(@i, px);
+    }
+    .element-width(@n, (@i + 10));
+}
+//高度
+.element-height(@n, @i: 0) when (@i =< @n) {
+    .h@{i} {
+        height: unit(@i, px);
+    }
+    .element-height(@n, (@i + 5));
+}
+//margin
+.element-margin(@n, @i: 0) when (@i =< @n) {
+    .mgt-@{i} {
+        margin-top: unit(@i, px);
+    }
+    .mgr-@{i} {
+        margin-right: unit(@i, px);
+    }
+    .mgb-@{i} {
+        margin-bottom: unit(@i, px);
+    }
+    .mgl-@{i} {
+        margin-left: unit(@i, px);
+    }
+    .element-margin(@n, (@i + 5));
+}
+
+//padding
+.element-padding(@n, @i: 0) when (@i <=@n) {
+    .pdt-@{i} {
+        padding-top: unit(@i, px);
+    }
+    .pdr-@{i} {
+        padding-right: unit(@i, px);
+    }
+    .pdb-@{i} {
+        padding-bottom: unit(@i, px);
+    }
+    .pdl-@{i} {
+        padding-left: unit(@i, px);
+    }
+    .element-padding(@n, (@i + 5));
+}

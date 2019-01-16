@@ -1,0 +1,20 @@
+.arrow-variant(@arrow-width) {
+    &:before, &:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: @arrow-width solid transparent;
+        border-right: @arrow-width solid transparent;
+    }
+}
+.arrow-variant-color(@border, @color, @position) {
+    &:before {
+        @{position}: -@arrow-height;
+        @{border}: @color;
+    }
+    &:after {
+        @{position}: -(@arrow-height - 1);
+        @{border}: @color;
+    }
+}

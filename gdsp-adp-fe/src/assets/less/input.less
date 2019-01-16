@@ -1,0 +1,56 @@
+.ele-input {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    overflow: hidden;
+    position: relative;
+    padding: @ele-input-padding-vertical @ele-input-padding-horizontal;
+    height: @ele-input-height;
+    line-height: @ele-input-height;
+    cursor: pointer;
+    border: 1px solid @ele-input-border-color;
+    background: @ele-input-bg-color;
+    -webkit-border-radius: @ele-input-border-radius;
+    border-radius: @ele-input-border-radius;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: @ele-input-color;
+    input {
+        display: block;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        line-height: 1;
+        font-size: 14px;
+        border: 0;
+        background: transparent;
+        color: @ele-input-in-color;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    &:hover, &.hover {
+        border-color: @ele-input-hover-border-color;
+        input {
+            color: @ele-input-in-hover-color;
+        }
+    }
+    &.error {
+        border-color: @ele-input-error-color;
+    }
+    &.disabled {
+        cursor: not-allowed;
+        background: @ele-input-disabled-bg;
+        border-color: @ele-input-disabled-border-color;
+        &:hover {
+            border-color: @ele-input-disabled-hover-border-color;
+        }
+        input {
+           cursor: not-allowed; 
+        }
+    }
+    &::-webkit-input-placeholder {
+        color: #c0ccda;
+    }
+}

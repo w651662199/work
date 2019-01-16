@@ -1,0 +1,33 @@
+.query-information {
+    padding: @query-information-padding-vertical @query-information-padding-horizontal;
+    background: #fff;
+    .information-operation {
+        padding-bottom: @information-operation-padding-bottom;
+        .btn {
+            margin-right: 10px;
+        }
+    }
+    .information-fn {
+        *zoom: 1;
+        &:extend(.clearfix all);
+        .fn-item {
+            float: left;
+            margin-right: @information-fn-item-margin-right;
+            margin-bottom: @information-fn-item-margin-bottom;
+            .item-title {
+                display: inline-block;
+                *display: inline;
+                *zoom: 1;
+                vertical-align: top;
+                margin-right: 1px;
+                height: @information-fn-item-title-height;
+                line-height: @information-fn-item-title-height;
+                font-size: 14px;
+                color: @information-fn-item-title-color;
+            }
+        }
+        .fn-search {
+            float: left;
+        }
+    }
+}

@@ -1,0 +1,87 @@
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.fr {
+    float: right!important;
+}
+
+.fl {
+    float: left!important;
+}
+
+.hide {
+    display: none!important;
+}
+
+.show {
+    display: block!important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.error-message {
+    color: #ff4949;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.master {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: #23272c;
+    opacity: 0.35;
+    filter: alpha(opacity=35);
+}
+
+.ellipsis {
+    overflow: hidden;
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    font-style: normal;
+    text-overflow: ellipsis;
+}
+.bg-white {
+    background: #fff;
+}
+.text-align-left {
+    text-align: left;
+}
+.text-align-center {
+    text-align: center;
+}
+.text-align-right {
+    text-align: right;
+}
+.isErrorInput {
+    input {
+        border-color: #ff4949;
+        &:hover {
+            border-color: #ff4949;
+        }
+    }
+}
+
+.element-width(@element-width);
+.element-height(@element-height);
+.element-margin(@element-margin);
+.element-padding(@element-padding);

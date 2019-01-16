@@ -1,0 +1,140 @@
+//初始化
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+p,
+//input,
+button,
+textarea,
+article,
+aside,
+footer,
+header,
+nav,
+section,
+menu {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    outline: 0;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: 100%;
+    font-style: normal;
+    vertical-align: baseline;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font-size: 14px;
+    font-family: 'PingFang SC', 'Myriad Pro', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
+
+table {
+    border-spacing: 0;
+    vertical-align: middle;
+    border-collapse: collapse;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+img {
+    border: 0 none;
+    vertical-align: middle;
+}
+
+input,
+textarea {
+    outline: 0;
+    resize: none;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+    background-color: #fff;
+    background-image: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    outline: 0;
+}
+
+em {
+    font-style: normal;
+}
+
+::-ms-clear,
+ ::-ms-reveal {
+    display: none;
+}
+
+body {
+  min-width: 1200px;
+  -webkit-text-size-adjust: none;
+  background: url(@body-image) repeat-y #f0f3f6;
+  font-family: Microsoft YaHei, sans-serif, PingFang SC, Myriad Pro, Hiragino Sans GB; }
+
+a {
+    color: #0090ec;
+}
+
+a:hover {
+    color: #0090ec;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.content {
+    *zoom: 1;
+        &:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+.content-main {
+    overflow: hidden;
+    zoom: 1;
+    .content-main-data {
+        min-width: 1100px;
+        padding: 0px 40px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
+.homepage {
+    margin: 0 auto;
+    padding: 30px 0px 20px 240px;
+}
+.el-pagination-reset {
+    padding: 0;
+    margin-top: @pagination-reset-margin-top;
+    margin-bottom: @pagination-reset-margin-bottom;
+    text-align: right;
+}

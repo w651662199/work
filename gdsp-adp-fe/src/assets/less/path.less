@@ -1,0 +1,21 @@
+.path {
+    padding-left: @path-padding-left;
+    margin-bottom: @path-margin-bottom;
+    height: @path-height;
+    line-height: @path-height;
+    font-size: @path-size;
+    color: @path-color;
+    border-left: @path-border-left-width solid @path-border-left-color;
+    background: #fff;
+    .path-col {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        vertical-align: middle;
+        padding-right: @path-col-padding-right;
+        b {
+            font-weight: normal;
+            color: @path-col-b-color; 
+        }
+    }
+}

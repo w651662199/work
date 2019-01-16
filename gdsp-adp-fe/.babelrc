@@ -1,0 +1,15 @@
+{
+  "presets": ["es2015", "stage-2"],
+  "plugins": ["transform-runtime", ["component", [
+  	   	{
+			"libraryName": "element-ui",
+			"styleLibraryName": "~element-ui/../../src/assets/css/theme"
+		}
+	]]],
+  "comments": false,
+  "env": {
+    "test": {
+      "plugins": [ "istanbul" ]
+    }
+  }
+}

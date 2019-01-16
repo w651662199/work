@@ -1,0 +1,132 @@
+.index-content {
+	margin: 0 auto;
+	padding: 30px 0 20px;
+	width: 1200px;
+	.index-item-con {
+		display: flex;
+		width: 100%;
+		-ms-flex-pack: distribute;
+		justify-content: space-around;
+		li {
+			overflow: hidden;
+			-ms-flex-positive: 1;
+			flex-grow: 1;
+			min-width: 258px;
+			margin-left: 10px;
+			height: 180px;
+			background: #fff;
+			border-radius: 4px;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+	.statis-title {
+		padding: 14px 0 14px 20px;
+		font-size: 26px;
+		font-weight: 400;
+		color: #23272c;
+	}
+	.statis-cont {
+		position: relative;
+		padding-top: 23px;
+		text-align: center;
+		color: #596069;
+		font-size: 18px;
+		line-height: 38px;
+	}
+	.index-map {
+		margin-top: 20px;
+		padding: 16px 60px 20px;
+		background: #fff;
+		border-radius: 4px;
+		.map-title {
+			position: relative;
+			height: 24px;
+			line-height: 24px;
+			font-size: 16px;
+			color: #23272c;
+			i {
+				padding-left: 5px;
+				font-size: 12px;
+				color: #89919c;
+				font-style: normal;
+			}
+		}
+		.map-data {
+			padding: 16px 0;
+			li {
+				float: left;
+				display: inline;
+				margin-right: 10px;
+				margin-bottom: 10px;
+				width: 190px;
+				height: 100px;
+				background: #ebf8fe;
+				border-radius: 4px;
+				span {
+					display: block;
+					padding: 0 20px;
+					font-size: 24px;
+					color: #23272c;
+				}
+			}
+			strong {
+				display: block;
+				padding: 20px 20px 10px;
+				font-weight: 400;
+				font-size: 14px;
+				color: #89919c;
+			}
+		}
+		.map-select {
+			padding: 35px 0 30px;
+			.el-select {
+				display: inline-block;
+				width: 200px;
+				margin-right: 20px;
+			}
+		}
+		.map-direct {
+			text-align: right;
+			margin-top: 20px;
+			height: 40px;
+			line-height: 40px;
+			span {
+				position: relative;
+				display: inline-block;
+				padding-left: 53px;
+				color: #23272c;
+				&:before {
+					content: "";
+					display: inline-block;
+					position: absolute;
+					left: 34px;
+					top: 50%;
+					margin-top: -5px;
+					width: 10px;
+					height: 10px;
+					border-radius: 10px;
+				}
+				&.direct-total:before {
+					background: #ECF752;
+				}
+				&.direct-view:before {
+					background: #79E8D0;
+				}
+				&.direct-click:before {
+					background: #FFB8B8;
+				}
+				&.direct-ctr:before {
+					background: #86E65A;
+				}
+				&.direct-avgClick:before {
+					background: #24D197;
+				}
+				&.direct-avgMill:before {
+					background: #01a9f4;
+				}
+			}
+		}
+	}
+}

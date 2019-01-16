@@ -1,0 +1,64 @@
+.btn {
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+    outline: 0 none;
+    border: 1px solid transparent;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    .button-size(@padding-base-vertical, @padding-base-horizontal, @font-size-base, @line-height-base, @btn-border-radius-base);
+    &.disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+        color: #ccc;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: @cursor-disabled;
+        .opacity(.65);
+        .box-shadow(none);
+    }
+    a& {
+        &.disabled,
+        fieldset[disabled] & {
+            pointer-events: none;
+        }
+    }
+}
+.btn-normal {
+    .button-variant(@btn-normal-color, @btn-normal-bg-first, @btn-normal-bg-second, @btn-normal-bg-first-hover, @btn-normal-bg-second-hover, @btn-normal-bg-first-focus, @btn-normal-bg-second-focus, @btn-normal-border);
+}
+.btn-danger {
+    .button-variant(@btn-danger-color, @btn-danger-bg-first, @btn-danger-bg-second, @btn-danger-bg-first-hover, @btn-danger-bg-second-hover, @btn-danger-bg-first-focus, @btn-danger-bg-second-focus, @btn-danger-border);
+}
+.btn-gray {
+    .button-variant(@btn-gray-color, @btn-gray-bg-first, @btn-gray-bg-second, @btn-gray-bg-first-hover, @btn-gray-bg-second-hover, @btn-gray-bg-first-focus, @btn-gray-bg-second-focus, @btn-gray-border);
+}    
+.btn-blue {
+    .button-variant(@btn-blue-color, @btn-blue-bg-first, @btn-blue-bg-second, @btn-blue-bg-first-hover, @btn-blue-bg-second-hover, @btn-blue-bg-first-focus, @btn-blue-bg-second-focus, @btn-blue-border);
+}
+
+.btn-orange {
+    .button-variant(@btn-orange-color, @btn-orange-bg-first, @btn-orange-bg-second, @btn-orange-bg-first-hover, @btn-orange-bg-second-hover, @btn-orange-bg-first-focus, @btn-orange-bg-second-focus, @btn-orange-border);
+}
+.btn-base-gray {
+    .button-variant(@btn-base-gray-color, @btn-base-gray-bg-first, @btn-base-gray-bg-second, @btn-base-gray-bg-first-hover, @btn-base-gray-bg-second-hover, @btn-base-gray-bg-first-focus, @btn-base-gray-bg-second-focus, @btn-base-gray-border);
+}
+
+
+.btn-lg {
+   .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @btn-border-radius-large); 
+}
+.btn-middle {
+   .button-size(@padding-middle-vertical; @padding-middle-horizontal; @font-size-middle; @line-height-middle; @btn-border-radius-middle); 
+}
+.btn-small {
+    .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @btn-border-radius-small); 
+}

@@ -1,0 +1,78 @@
+.aui-region {
+	width: 810px;
+	border: 1px solid #ddd;
+	background: #fff;
+	.aui-region-header {
+		height: 45px;
+		padding: 10px 20px;
+		box-sizing: border-box;
+		color: #999;
+		background: #fff;
+		.aui-region-header-lenged {
+			float: left;
+			cursor: pointer;
+		}
+		.icon {
+			font-size: 14px;
+			margin-right: 5px;
+		}
+	}
+	.aui-region-body {
+		background: #f7f7f7;
+		padding: 10px;
+		.aui-region-detail {
+			float: left;
+			border: 1px solid #ddd;
+		}
+		.aui-region-province {
+			width: 200px;
+			height: 210px;
+			box-sizing: border-box;
+			overflow: auto;
+			li {
+				&:hover {
+					background: #eee;
+				}
+			}
+		}
+		.aui-region-city {
+			width: 420px;
+			height: 210px;
+			box-sizing: border-box;
+			overflow: auto;
+			border-left: none;
+			.aui-region-list {
+				li {
+					float: left;
+					width: 194px;
+					&:hover {
+						background: none;
+					}
+				}
+			}
+		}
+		.aui-region-list {
+			li {
+				height: 26px;
+				padding: 0 10px;
+				line-height: 26px;
+			}
+			.aui-region-check-item {
+				cursor: pointer;
+			}
+			.icon {
+				margin-right: 5px;
+				font-size: 14px;
+			}
+		}
+		&:after {
+			content: "";
+			height: 0;
+			display: block;
+			clear: both;
+		}
+	}
+}
+.aui-right {
+	float: right;
+}

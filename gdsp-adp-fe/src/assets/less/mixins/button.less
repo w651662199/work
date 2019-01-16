@@ -1,0 +1,39 @@
+.button-variant(@color, @background-first, @background-second, @background-first-hover, @background-second-hover, @background-first-focus, @background-second-focus, @border) {
+    border-color: @border;
+    color: @color;
+    background: -moz-linear-gradient(top, @background-first 0%, @background-second 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @background-first), color-stop(100%, @background-second));
+    background: -webkit-linear-gradient(top, @background-first 0%, @background-second 100%);
+    background: -o-linear-gradient(top, @background-first 0%, @background-second 100%);
+    background: -ms-linear-gradient(top, @background-first 0%, @background-second 100%);
+    background: linear-gradient(to bottom, @background-first 0%, @background-second 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@background-first, endColorstr=@background-second, GradientType=0);
+    &:hover {
+        color: @color;
+        background: -moz-linear-gradient(top, @background-first-hover 0%, @background-second-hover 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @background-first-hover), color-stop(100%, @background-second-hover));
+        background: -webkit-linear-gradient(top, @background-first-hover 0%, @background-second-hover 100%);
+        background: -o-linear-gradient(top, @background-first-hover 0%, @background-second-hover 100%);
+        background: -ms-linear-gradient(top, @background-first-hover 0%, @background-second-hover 100%);
+        background: linear-gradient(to bottom, @background-first-hover 0%, @background-second-hover 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@background-first-hover, endColorstr=@background-second-hover, GradientType=0); 
+    }
+    &:focus {
+        color: @color;
+        background: -moz-linear-gradient(top, @background-first-focus 0%, @background-second-focus 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @background-first-focus), color-stop(100%, @background-second-focus));
+        background: -webkit-linear-gradient(top, @background-first-focus 0%, @background-second-focus 100%);
+        background: -o-linear-gradient(top, @background-first-focus 0%, @background-second-focus 100%);
+        background: -ms-linear-gradient(top, @background-first-focus 0%, @background-second-focus 100%);
+        background: linear-gradient(to bottom, @background-first-focus 0%, @background-second-focus 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@background-first-focus, endColorstr=@background-second-focus, GradientType=0); 
+    }
+}
+.button-size(@padding-vertical, @padding-horizontal, @font-size, @line-height, @border-radius) {
+    padding: @padding-vertical @padding-horizontal;
+    height: @line-height;
+    line-height: @line-height;
+    font-size: @font-size;
+    border-radius: @border-radius;
+    -webkit-border-radius: @border-radius;
+}
